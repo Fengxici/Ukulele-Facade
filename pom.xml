@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>timing.ukulele</groupId>
+    <artifactId>ukulele-facade</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>Auth-Cloud-Facade</module>
+        <module>Auth-Dubbo-Facade</module>
+        <module>Syslog-Cloud-Facade</module>
+        <module>Syslog-Dubbo-Facade</module>
+        <module>User-Cloud-Facade</module>
+        <module>User-Dubbo-Facade</module>
+        <module>Portal-Cloud-Facade</module>
+        <module>Portal-Dubbo-Facade</module>
+    </modules>
+    <name>ukulele-facade</name>
+    <!-- FIXME change it to the project's website -->
+    <url>http://www.example.com</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <timing.ukulele-version>1.0-SNAPSHOT</timing.ukulele-version>
+        <mybatis-plus-annotation-version>3.1.0</mybatis-plus-annotation-version>
+        <lombok-version>1.18.6</lombok-version>
+        <spring-cloud-openfeign-core-version>2.1.1.RELEASE</spring-cloud-openfeign-core-version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>timing.ukulele</groupId>
+                <artifactId>ukulele-common</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>timing.ukulele</groupId>
+                <artifactId>ukulele-persistence</artifactId>
+                <version>${timing.ukulele-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-annotation</artifactId>
+                <version>${mybatis-plus-annotation-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok-version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>timing.ukulele</groupId>
+                <artifactId>ukulele-web</artifactId>
+                <version>${timing.ukulele-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-openfeign-core</artifactId>
+                <version>${spring-cloud-openfeign-core-version}</version>
+                <scope>compile</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
