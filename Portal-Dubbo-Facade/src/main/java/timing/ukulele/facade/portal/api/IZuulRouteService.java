@@ -21,7 +21,7 @@ public interface IZuulRouteService {
      * @return SysZuulRoute
      */
     @GetMapping("/{id}")
-    SysZuulRoute get(@PathVariable long id);
+    SysZuulRoute get(@PathVariable(value="id") long id);
 
     /**
      * 分页查询信息
@@ -48,7 +48,7 @@ public interface IZuulRouteService {
      * @return success/false
      */
     @DeleteMapping("/{id}")
-    ResponseVO delete(@PathVariable long id);
+    ResponseVO delete(@PathVariable(value="id") long id);
 
     /**
      * 编辑

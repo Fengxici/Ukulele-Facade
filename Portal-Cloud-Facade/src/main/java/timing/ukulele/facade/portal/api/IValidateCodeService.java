@@ -1,6 +1,5 @@
 package timing.ukulele.facade.portal.api;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -17,6 +16,6 @@ public interface IValidateCodeService {
      * @throws Exception
      */
     @GetMapping("/code/{randomStr}")
-    void createCode(@PathVariable String randomStr, HttpServletResponse response)
+    void createCode(@PathVariable(value="randomStr") String randomStr, HttpServletResponse response)
             throws Exception;
 }

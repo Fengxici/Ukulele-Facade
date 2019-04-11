@@ -47,7 +47,7 @@ public interface IUserService {
      * @return 用户信息
      */
     @GetMapping("/{id}")
-    UserVO user(@PathVariable Integer id);
+    UserVO user(@PathVariable(value="id") Integer id);
 
     /**
      * 删除用户信息
@@ -56,7 +56,7 @@ public interface IUserService {
      * @return R
      */
     @DeleteMapping("/{id}")
-    ResponseVO userDel(@PathVariable Integer id);
+    ResponseVO userDel(@PathVariable(value="id") Integer id);
 
     /**
      * 添加用户
@@ -83,7 +83,7 @@ public interface IUserService {
      * @return UseVo 对象
      */
     @GetMapping("/findUserByUsername/{username}")
-    public UserVO findUserByUsername(@PathVariable String username);
+    public UserVO findUserByUsername(@PathVariable(value="username") String username);
 
     /**
      * 通过手机号查询用户及其角色信息
@@ -92,7 +92,7 @@ public interface IUserService {
      * @return UseVo 对象
      */
     @GetMapping("/findUserByMobile/{mobile}")
-    UserVO findUserByMobile(@PathVariable String mobile);
+    UserVO findUserByMobile(@PathVariable(value="mobile") String mobile);
 
     /**
      * 通过OpenId查询
@@ -101,7 +101,7 @@ public interface IUserService {
      * @return 对象
      */
     @GetMapping("/findUserByOpenId/{openId}")
-    UserVO findUserByOpenId(@PathVariable String openId);
+    UserVO findUserByOpenId(@PathVariable(value="openId") String openId);
 
     /**
      * 分页查询用户
@@ -116,10 +116,9 @@ public interface IUserService {
     /**
      * 修改个人信息
      *
-     * @param userDto userDto
      * @param userVo  登录用户信息
      * @return success/false
      */
     @PutMapping("/editInfo")
-    ResponseVO editInfo(@RequestBody UserDTO userDto, UserVO userVo);
+    ResponseVO editInfo(@RequestBody UserVO userVo);
 }

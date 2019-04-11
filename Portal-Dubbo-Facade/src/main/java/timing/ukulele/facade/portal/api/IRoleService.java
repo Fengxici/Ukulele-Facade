@@ -18,7 +18,7 @@ public interface IRoleService {
      * @return 角色信息
      */
     @GetMapping("/{id}")
-    SysRole role(@PathVariable Long id);
+    SysRole role(@PathVariable(value="id") Long id);
 
     /**
      * 添加角色
@@ -39,7 +39,7 @@ public interface IRoleService {
     ResponseVO roleUpdate(@RequestBody RoleDTO roleDto);
 
     @DeleteMapping("/{id}")
-    ResponseVO roleDel(@PathVariable Long id);
+    ResponseVO roleDel(@PathVariable(value="id") Long id);
 
     /**
      * 获取角色列表
@@ -48,7 +48,7 @@ public interface IRoleService {
      * @return 角色列表
      */
     @GetMapping("/roleList/{deptId}")
-    List<SysRole> roleList(@PathVariable Long deptId);
+    List<SysRole> roleList(@PathVariable(value="deptId") Long deptId);
 
     /**
      * 分页查询角色信息

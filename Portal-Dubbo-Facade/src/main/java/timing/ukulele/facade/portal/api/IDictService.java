@@ -24,7 +24,7 @@ public interface IDictService {
      * @return 字典信息
      */
     @GetMapping("/{id}")
-    SysDict dict(@PathVariable Integer id);
+    SysDict dict(@PathVariable(value="id") Integer id);
 
     /**
      * 分页查询字典信息
@@ -42,7 +42,7 @@ public interface IDictService {
      * @return 同类型字典
      */
     @GetMapping("/type/{type}")
-    List<SysDict> findDictByType(@PathVariable String type);
+    List<SysDict> findDictByType(@PathVariable(value="type") String type);
 
     /**
      * 添加字典
@@ -61,7 +61,7 @@ public interface IDictService {
      * @return R
      */
     @DeleteMapping("/{id}/{type}")
-    ResponseVO deleteDict(@PathVariable Integer id, @PathVariable String type);
+    ResponseVO deleteDict(@PathVariable(value="id") Integer id, @PathVariable(value="type") String type);
 
     /**
      * 修改字典

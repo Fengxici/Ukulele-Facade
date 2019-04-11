@@ -22,7 +22,7 @@ public interface IClientService {
      * @return SysOauthClientDetails
      */
     @GetMapping("/{id}")
-    OAuthClientDetailsModel get(@PathVariable Integer id);
+    OAuthClientDetailsModel get(@PathVariable(value="id") Integer id);
 
 
     /**
@@ -50,7 +50,7 @@ public interface IClientService {
      * @return success/false
      */
     @DeleteMapping("/{id}")
-    ResponseVO delete(@PathVariable String id);
+    ResponseVO delete(@PathVariable(value="id") String id);
 
     /**
      * 编辑

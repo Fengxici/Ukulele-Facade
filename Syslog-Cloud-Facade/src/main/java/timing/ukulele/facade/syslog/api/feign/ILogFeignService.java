@@ -30,10 +30,5 @@ public interface ILogFeignService extends ILogService {
             return null;
         }
 
-        @Override
-        public void add(SysLog log, BindingResult result) {
-
-        }
     }
-
 }

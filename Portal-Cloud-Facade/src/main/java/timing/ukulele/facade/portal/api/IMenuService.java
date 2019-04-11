@@ -9,7 +9,7 @@ import timing.ukulele.facade.portal.model.view.MenuVO;
 
 import java.util.List;
 
-@RequestMapping("/menu")
+//@RequestMapping("/menu")
 public interface IMenuService {
 
     /**
@@ -18,15 +18,15 @@ public interface IMenuService {
      * @param role 角色名称
      * @return 菜单列表
      */
-    @GetMapping("/findMenuByRole/{role}")
-    List<MenuVO> findMenuByRole(@PathVariable String role);
+    @GetMapping("/menu/findMenuByRole/{role}")
+    List<MenuVO> findMenuByRole(@PathVariable(value="role") String role);
 
     /**
      * 返回当前用户的树形菜单集合
      *
      * @return 当前用户的树形菜单
      */
-    @GetMapping(value = "/userMenu")
+    @GetMapping(value = "/menu/userMenu")
     public List<MenuTree> userMenu(@RequestHeader(name = "x-role-header") String roles);
 
     /**
@@ -34,7 +34,7 @@ public interface IMenuService {
      *
      * @return 树形菜单
      */
-    @GetMapping(value = "/allTree")
+    @GetMapping(value = "/menu/allTree")
     List<MenuTree> getMenuTree();
 
     /**
@@ -43,8 +43,8 @@ public interface IMenuService {
      * @param roleName 角色名称
      * @return 属性集合
      */
-    @GetMapping("/roleTree/{roleName}")
-    List<Integer> roleTree(@PathVariable String roleName);
+    @GetMapping("/menu/roleTree/{roleName}")
+    List<Integer> roleTree(@PathVariable(value="roleName") String roleName);
 
     /**
      * 通过ID查询菜单的详细信息
@@ -52,8 +52,8 @@ public interface IMenuService {
      * @param id 菜单ID
      * @return 菜单详细信息
      */
-    @GetMapping("/{id}")
-    public SysMenu menu(@PathVariable Long id);
+    @GetMapping("/menu/{id}")
+    SysMenu menu(@PathVariable(value="id") Long id);
 
     /**
      * 新增菜单
@@ -61,7 +61,7 @@ public interface IMenuService {
      * @param sysMenu 菜单信息
      * @return success/false
      */
-    @PostMapping
+    @PostMapping("/menu")
     ResponseVO menu(@RequestBody SysMenu sysMenu);
 
     /**
@@ -71,12 +71,12 @@ public interface IMenuService {
      * @return success/false
      * TODO  级联删除下级节点
      */
-    @DeleteMapping("/{id}")
-    ResponseVO menuDel(@PathVariable Long id);
+    @DeleteMapping("/menu/{id}")
+    ResponseVO menuDel(@PathVariable(value="id") Long id);
 
-    @PutMapping
+    @PutMapping("/menu")
     ResponseVO menuUpdate(@RequestBody SysMenu sysMenu);
 
-    @GetMapping("/user/{userId")
-    ResponseData<List<SysMenu>> getMenuByUserId(Long userId);
+    @GetMapping("/menu/user/{userId")
+    ResponseData<List<SysMenu>> getMenuByUserId(@PathVariable(value="userId") Long userId);
 }

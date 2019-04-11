@@ -72,7 +72,7 @@ public interface IUserFeignService extends IUserService {
         }
 
         @Override
-        public ResponseVO editInfo(UserDTO userDto, UserVO userVo) {
+        public ResponseVO editInfo(UserVO userVo) {
             return null;
         }
     }

@@ -18,7 +18,7 @@ public interface IMenuService {
      * @return 菜单列表
      */
     @GetMapping("/findMenuByRole/{role}")
-    List<MenuVO> findMenuByRole(@PathVariable String role);
+    List<MenuVO> findMenuByRole(@PathVariable(value="role") String role);
 
     /**
      * 返回当前用户的树形菜单集合
@@ -43,7 +43,7 @@ public interface IMenuService {
      * @return 属性集合
      */
     @GetMapping("/roleTree/{roleName}")
-    List<Integer> roleTree(@PathVariable String roleName);
+    List<Integer> roleTree(@PathVariable(value="roleName") String roleName);
 
     /**
      * 通过ID查询菜单的详细信息
@@ -52,7 +52,7 @@ public interface IMenuService {
      * @return 菜单详细信息
      */
     @GetMapping("/{id}")
-    public SysMenu menu(@PathVariable Long id);
+    public SysMenu menu(@PathVariable(value="id") Long id);
 
     /**
      * 新增菜单
@@ -71,7 +71,7 @@ public interface IMenuService {
      * TODO  级联删除下级节点
      */
     @DeleteMapping("/{id}")
-    ResponseVO menuDel(@PathVariable Long id);
+    ResponseVO menuDel(@PathVariable(value="id") Long id);
 
     @PutMapping
     ResponseVO menuUpdate(@RequestBody SysMenu sysMenu);

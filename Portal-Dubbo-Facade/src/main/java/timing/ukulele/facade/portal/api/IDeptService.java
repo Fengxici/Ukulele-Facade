@@ -21,7 +21,7 @@ public interface IDeptService {
      * @return SysDept
      */
     @GetMapping("/{id}")
-    SysDept get(@PathVariable Integer id);
+    SysDept get(@PathVariable(value="id") Integer id);
 
     /**
      * 返回树形菜单集合
@@ -47,7 +47,7 @@ public interface IDeptService {
      * @return success/false
      */
     @DeleteMapping("/{id}")
-    Boolean delete(@PathVariable Integer id);
+    Boolean delete(@PathVariable(value="id") Integer id);
 
     /**
      * 编辑

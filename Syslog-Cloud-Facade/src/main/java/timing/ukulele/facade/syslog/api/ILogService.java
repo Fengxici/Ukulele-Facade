@@ -34,14 +34,6 @@ public interface ILogService {
      * @return success/false
      */
     @DeleteMapping("/{id}")
-    ResponseVO delete(@PathVariable Long id);
+    ResponseVO delete(@PathVariable(value="id") Long id);
 
-    /**
-     * 添加日志
-     *
-     * @param log    日志实体
-     * @param result 错误信息
-     */
-    @PostMapping
-    void add(@RequestBody SysLog log, BindingResult result);
 }
