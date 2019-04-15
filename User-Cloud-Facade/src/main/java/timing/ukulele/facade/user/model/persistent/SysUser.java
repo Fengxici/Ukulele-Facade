@@ -17,8 +17,9 @@ public class SysUser extends BaseModel {
     /**
      * 用户名
      */
+    @TableField("username_")
     private String username;
-
+    @TableField("password_")
     private String password;
     /**
      * 随机盐
