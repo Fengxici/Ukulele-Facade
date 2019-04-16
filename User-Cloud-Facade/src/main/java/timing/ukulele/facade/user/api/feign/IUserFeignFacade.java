@@ -4,7 +4,7 @@ import com.github.pagehelper.Page;
 import org.springframework.cloud.openfeign.FeignClient;
 import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.common.data.ResponseVO;
-import timing.ukulele.facade.user.api.IUserService;
+import timing.ukulele.facade.user.api.IUserFacade;
 import timing.ukulele.facade.user.model.data.UserDTO;
 import timing.ukulele.facade.user.model.persistent.SysUser;
 import timing.ukulele.facade.user.model.view.UserVO;
@@ -12,9 +12,9 @@ import timing.ukulele.web.pojo.ResponseCode;
 
 import java.util.Map;
 
-@FeignClient(name = "user-service", fallback = IUserFeignService.UserHystrixClientFallback.class)
-public interface IUserFeignService extends IUserService {
-    class UserHystrixClientFallback implements IUserFeignService {
+@FeignClient(name = "user-service", fallback = IUserFeignFacade.UserHystrixClientFallback.class)
+public interface IUserFeignFacade extends IUserFacade {
+    class UserHystrixClientFallback implements IUserFeignFacade {
 
         @Override
         public ResponseData<SysUser> getUserByUserName(String userName) {

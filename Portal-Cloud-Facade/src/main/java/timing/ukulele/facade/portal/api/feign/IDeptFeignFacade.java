@@ -1,7 +1,7 @@
 package timing.ukulele.facade.portal.api.feign;
 
 import org.springframework.cloud.openfeign.FeignClient;
-import timing.ukulele.facade.portal.api.IDeptService;
+import timing.ukulele.facade.portal.api.IDeptFacade;
 import timing.ukulele.facade.portal.model.data.DeptTree;
 import timing.ukulele.facade.portal.model.persistent.SysDept;
 
@@ -10,9 +10,9 @@ import java.util.List;
 /**
  *
  */
-@FeignClient(name = "portal-service", fallback = IDeptFeignService.DeptHystrixClientFallback.class)
-public interface IDeptFeignService extends IDeptService {
-    class DeptHystrixClientFallback implements IDeptFeignService{
+@FeignClient(name = "portal-service", fallback = IDeptFeignFacade.DeptHystrixClientFallback.class)
+public interface IDeptFeignFacade extends IDeptFacade {
+    class DeptHystrixClientFallback implements IDeptFeignFacade {
 
         @Override
         public SysDept get(Integer id) {

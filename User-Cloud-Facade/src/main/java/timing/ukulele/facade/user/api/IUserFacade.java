@@ -10,7 +10,7 @@ import timing.ukulele.facade.user.model.view.UserVO;
 
 import java.util.Map;
 
-public interface IUserService {
+public interface IUserFacade {
     /**
      * 根据用户名查询用户
      *

@@ -10,15 +10,15 @@ import timing.ukulele.facade.portal.model.persistent.SysRole;
 import java.util.List;
 import java.util.Map;
 
-//@RequestMapping("/role")
-public interface IRoleService {
+@RequestMapping("/role")
+public interface IRoleFacade {
     /**
      * 通过ID查询角色信息
      *
      * @param id ID
      * @return 角色信息
      */
-    @GetMapping("/role/{id}")
+    @GetMapping("/{id}")
     SysRole role(@PathVariable(value="id") Long id);
 
     /**
@@ -27,7 +27,7 @@ public interface IRoleService {
      * @param roleDto 角色信息
      * @return success、false
      */
-    @PostMapping("/role")
+    @PostMapping()
     ResponseVO role(@RequestBody RoleDTO roleDto);
 
     /**
@@ -36,11 +36,20 @@ public interface IRoleService {
      * @param roleDto 角色信息
      * @return success/false
      */
-    @PutMapping("/role")
+    @PutMapping()
     ResponseVO roleUpdate(@RequestBody RoleDTO roleDto);
 
-    @DeleteMapping("/role/{id}")
+    @DeleteMapping("/{id}")
     ResponseVO roleDel(@PathVariable(value="id") Long id);
+
+    /**
+     * 返回角色的菜单集合
+     *
+     * @param roleName 角色名称
+     * @return 属性集合
+     */
+    @GetMapping("/roleTree/{roleName}")
+    List<Integer> roleTree(@PathVariable(value="roleName") String roleName);
 
     /**
      * 获取角色列表
@@ -48,7 +57,7 @@ public interface IRoleService {
      * @param deptId 部门ID
      * @return 角色列表
      */
-    @GetMapping("/role/roleList/{deptId}")
+    @GetMapping("/roleList/{deptId}")
     List<SysRole> roleList(@PathVariable(value="deptId") Long deptId);
 
     /**
@@ -57,7 +66,7 @@ public interface IRoleService {
      * @param params 分页对象
      * @return 分页对象
      */
-    @GetMapping("/role/rolePage")
+    @GetMapping("/rolePage")
     Page rolePage(@RequestParam Map<String, Object> params);
 
     /**
@@ -65,9 +74,9 @@ public interface IRoleService {
      *
      * @return success、false
      */
-    @PutMapping("/role/roleMenuUpd")
+    @PutMapping("/roleMenuUpd")
     ResponseVO roleMenuUpd(@RequestBody Map data);
 
-    @GetMapping("/role/user/{userId}")
+    @GetMapping("/user/{userId}")
     ResponseData<List<SysRole>> getRoleByUserId(@PathVariable(value="userId") Long userId);
 }

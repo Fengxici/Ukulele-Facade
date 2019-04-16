@@ -9,7 +9,7 @@ import timing.ukulele.facade.syslog.model.persistent.SysLog;
 
 import java.util.Map;
 
-public interface ILogService {
+public interface ILogFacade {
     /**
      * 添加日志
      *

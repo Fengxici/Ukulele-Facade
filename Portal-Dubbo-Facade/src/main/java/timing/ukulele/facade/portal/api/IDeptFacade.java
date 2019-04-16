@@ -12,7 +12,7 @@ import java.util.List;
  * </p>
  */
 @RequestMapping("/dept")
-public interface IDeptService {
+public interface IDeptFacade {
 
     /**
      * 通过ID查询
@@ -21,7 +21,7 @@ public interface IDeptService {
      * @return SysDept
      */
     @GetMapping("/{id}")
-    SysDept get(@PathVariable(value="id") Integer id);
+    SysDept get(@PathVariable(value = "id") Integer id);
 
     /**
      * 返回树形菜单集合
@@ -37,7 +37,7 @@ public interface IDeptService {
      * @param sysDept 实体
      * @return success/false
      */
-    @PostMapping
+    @PostMapping()
     Boolean add(@RequestBody SysDept sysDept);
 
     /**
@@ -47,7 +47,7 @@ public interface IDeptService {
      * @return success/false
      */
     @DeleteMapping("/{id}")
-    Boolean delete(@PathVariable(value="id") Integer id);
+    Boolean delete(@PathVariable(value = "id") Integer id);
 
     /**
      * 编辑
@@ -55,6 +55,6 @@ public interface IDeptService {
      * @param sysDept 实体
      * @return success/false
      */
-    @PutMapping
+    @PutMapping()
     Boolean edit(@RequestBody SysDept sysDept) ;
 }

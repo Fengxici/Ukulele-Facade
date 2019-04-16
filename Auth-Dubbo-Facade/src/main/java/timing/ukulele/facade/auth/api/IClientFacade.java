@@ -1,7 +1,6 @@
 package timing.ukulele.facade.auth.api;
 
 import com.github.pagehelper.Page;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.common.data.ResponseVO;
@@ -11,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 @RequestMapping("/client")
-public interface IClientService {
+public interface IClientFacade {
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     ResponseData<List<OAuthClientDetailsModel>> getAllClient();
 

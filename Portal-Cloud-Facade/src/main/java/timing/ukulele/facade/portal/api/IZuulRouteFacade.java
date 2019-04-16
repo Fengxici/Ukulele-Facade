@@ -13,7 +13,7 @@ import java.util.Map;
  * </p>
  */
 //@RequestMapping("/route")
-public interface IZuulRouteService {
+public interface IZuulRouteFacade {
     /**
      * 通过ID查询
      *

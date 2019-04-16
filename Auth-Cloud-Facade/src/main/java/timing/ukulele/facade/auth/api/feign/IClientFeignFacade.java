@@ -4,16 +4,16 @@ import com.github.pagehelper.Page;
 import org.springframework.cloud.openfeign.FeignClient;
 import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.common.data.ResponseVO;
-import timing.ukulele.facade.auth.api.IClientService;
+import timing.ukulele.facade.auth.api.IClientFacade;
 import timing.ukulele.facade.auth.model.persistent.OAuthClientDetailsModel;
 import timing.ukulele.web.pojo.ResponseCode;
 
 import java.util.List;
 import java.util.Map;
 
-@FeignClient(name = "auth-service", fallback = IClientFeignService.HystrixClientFallback.class)
-public interface IClientFeignService extends IClientService {
-    class HystrixClientFallback implements IClientFeignService {
+@FeignClient(name = "auth-service", fallback = IClientFeignFacade.HystrixClientFallback.class)
+public interface IClientFeignFacade extends IClientFacade {
+    class HystrixClientFallback implements IClientFeignFacade {
 
         @Override
         public ResponseData<List<OAuthClientDetailsModel>> getAllClient() {

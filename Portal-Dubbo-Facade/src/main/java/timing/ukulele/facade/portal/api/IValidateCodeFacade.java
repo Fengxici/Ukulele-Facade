@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * 验证码提供
  */
-public interface IValidateCodeService {
+public interface IValidateCodeFacade {
 
     /**
      * 创建验证码
@@ -16,6 +16,6 @@ public interface IValidateCodeService {
      * @throws Exception
      */
     @GetMapping("/code/{randomStr}")
-    void createCode(@PathVariable(value="randomStr") String randomStr, HttpServletResponse response)
+    void createCode(@PathVariable(value = "randomStr") String randomStr, HttpServletResponse response)
             throws Exception;
 }

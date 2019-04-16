@@ -16,7 +16,7 @@
 //import java.util.Map;
 //
 //@FeignClient(name = "portal-service", fallback = IPortalFeignService.HystrixClientFallback.class)
-//public interface IPortalFeignService extends IDeptService, IDictService, IMenuService, IRoleService, IValidateCodeService, IZuulRouteService {
+//public interface IPortalFeignService extends IDeptFacade, IDictFacade, IMenuFacade, IRoleFacade, IValidateCodeFacade, IZuulRouteFacade {
 //    class HystrixClientFallback implements IPortalFeignService {
 //
 //        @Override

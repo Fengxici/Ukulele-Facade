@@ -15,7 +15,7 @@ import java.util.Map;
  * </p>
  */
 @RequestMapping("/dict")
-public interface IDictService {
+public interface IDictFacade {
 
     /**
      * 通过ID查询字典信息
@@ -24,7 +24,7 @@ public interface IDictService {
      * @return 字典信息
      */
     @GetMapping("/{id}")
-    SysDict dict(@PathVariable(value="id") Integer id);
+    SysDict dict(@PathVariable(value="id") Long id);
 
     /**
      * 分页查询字典信息
@@ -50,7 +50,7 @@ public interface IDictService {
      * @param sysDict 字典信息
      * @return success、false
      */
-    @PostMapping
+    @PostMapping()
     ResponseVO dict(@RequestBody SysDict sysDict);
 
     /**
@@ -60,7 +60,7 @@ public interface IDictService {
      * @param type 类型
      * @return R
      */
-    @DeleteMapping("/{id}/{type}")
+    @DeleteMapping("/dict/{id}/{type}")
     ResponseVO deleteDict(@PathVariable(value="id") Integer id, @PathVariable(value="type") String type);
 
     /**
@@ -69,6 +69,6 @@ public interface IDictService {
      * @param sysDict 字典信息
      * @return success/false
      */
-    @PutMapping
+    @PutMapping()
     ResponseVO editDict(@RequestBody SysDict sysDict);
 }

@@ -14,8 +14,8 @@ import java.util.Map;
  * 字典表 前端控制器
  * </p>
  */
-//@RequestMapping("/dict")
-public interface IDictService {
+@RequestMapping("/dict")
+public interface IDictFacade {
 
     /**
      * 通过ID查询字典信息
@@ -23,8 +23,8 @@ public interface IDictService {
      * @param id ID
      * @return 字典信息
      */
-    @GetMapping("/dict/{id}")
-    SysDict dict(@PathVariable(value="id") Integer id);
+    @GetMapping("/{id}")
+    SysDict dict(@PathVariable(value = "id") Long id);
 
     /**
      * 分页查询字典信息
@@ -32,7 +32,7 @@ public interface IDictService {
      * @param params 分页对象
      * @return 分页对象
      */
-    @GetMapping("/dict/dictPage")
+    @GetMapping("/dictPage")
     Page dictPage(@RequestParam Map<String, Object> params);
 
     /**
@@ -41,8 +41,8 @@ public interface IDictService {
      * @param type 类型
      * @return 同类型字典
      */
-    @GetMapping("/dict/type/{type}")
-    List<SysDict> findDictByType(@PathVariable(value="type") String type);
+    @GetMapping("/type/{type}")
+    List<SysDict> findDictByType(@PathVariable(value = "type") String type);
 
     /**
      * 添加字典
@@ -50,7 +50,7 @@ public interface IDictService {
      * @param sysDict 字典信息
      * @return success、false
      */
-    @PostMapping("/dict")
+    @PostMapping()
     ResponseVO dict(@RequestBody SysDict sysDict);
 
     /**
@@ -61,7 +61,7 @@ public interface IDictService {
      * @return R
      */
     @DeleteMapping("/dict/{id}/{type}")
-    ResponseVO deleteDict(@PathVariable(value="id") Integer id, @PathVariable(value="type") String type);
+    ResponseVO deleteDict(@PathVariable(value = "id") Integer id, @PathVariable(value = "type") String type);
 
     /**
      * 修改字典
@@ -69,6 +69,6 @@ public interface IDictService {
      * @param sysDict 字典信息
      * @return success/false
      */
-    @PutMapping("/dict")
+    @PutMapping()
     ResponseVO editDict(@RequestBody SysDict sysDict);
 }

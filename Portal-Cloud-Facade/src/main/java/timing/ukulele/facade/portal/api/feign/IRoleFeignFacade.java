@@ -4,16 +4,16 @@ import com.github.pagehelper.Page;
 import org.springframework.cloud.openfeign.FeignClient;
 import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.common.data.ResponseVO;
-import timing.ukulele.facade.portal.api.IRoleService;
+import timing.ukulele.facade.portal.api.IRoleFacade;
 import timing.ukulele.facade.portal.model.data.RoleDTO;
 import timing.ukulele.facade.portal.model.persistent.SysRole;
 
 import java.util.List;
 import java.util.Map;
 
-@FeignClient(name = "portal-service", fallback = IRoleFeignService.RoleHystrixClientFallback.class)
-public interface IRoleFeignService extends IRoleService {
-    class RoleHystrixClientFallback implements IRoleFeignService{
+@FeignClient(name = "portal-service", fallback = IRoleFeignFacade.RoleHystrixClientFallback.class)
+public interface IRoleFeignFacade extends IRoleFacade {
+    class RoleHystrixClientFallback implements IRoleFeignFacade {
 
         @Override
         public SysRole role(Long id) {
@@ -32,6 +32,11 @@ public interface IRoleFeignService extends IRoleService {
 
         @Override
         public ResponseVO roleDel(Long id) {
+            return null;
+        }
+
+        @Override
+        public List<Integer> roleTree(String roleName) {
             return null;
         }
 

@@ -12,16 +12,16 @@ import java.util.Map;
  * 动态路由配置表 前端控制器
  * </p>
  */
-@RequestMapping("/route")
-public interface IZuulRouteService {
+//@RequestMapping("/route")
+public interface IZuulRouteFacade {
     /**
      * 通过ID查询
      *
      * @param id ID
      * @return SysZuulRoute
      */
-    @GetMapping("/{id}")
-    SysZuulRoute get(@PathVariable(value="id") long id);
+    @GetMapping("/route/{id}")
+    SysZuulRoute get(@PathVariable(value = "id") long id);
 
     /**
      * 分页查询信息
@@ -29,7 +29,7 @@ public interface IZuulRouteService {
      * @param params 分页对象
      * @return 分页对象
      */
-    @GetMapping("/page")
+    @GetMapping("/route/page")
     Page page(@RequestParam Map<String, Object> params);
 
     /**
@@ -38,7 +38,7 @@ public interface IZuulRouteService {
      * @param sysZuulRoute 实体
      * @return success/false
      */
-    @PostMapping
+    @PostMapping("/route")
     ResponseVO add(@RequestBody SysZuulRoute sysZuulRoute);
 
     /**
@@ -47,8 +47,8 @@ public interface IZuulRouteService {
      * @param id ID
      * @return success/false
      */
-    @DeleteMapping("/{id}")
-    ResponseVO delete(@PathVariable(value="id") long id);
+    @DeleteMapping("/route/{id}")
+    ResponseVO delete(@PathVariable(value = "id") long id);
 
     /**
      * 编辑
@@ -56,7 +56,7 @@ public interface IZuulRouteService {
      * @param sysZuulRoute 实体
      * @return success/false
      */
-    @PutMapping
+    @PutMapping("/route")
     ResponseVO edit(@RequestBody SysZuulRoute sysZuulRoute);
 
     /**
@@ -64,6 +64,6 @@ public interface IZuulRouteService {
      *
      * @return success/fasle
      */
-    @GetMapping("/apply")
+    @GetMapping("/route/apply")
     ResponseVO apply();
 }

@@ -11,8 +11,8 @@ import java.util.List;
  * 部门管理 前端控制器
  * </p>
  */
-//@RequestMapping("/dept")
-public interface IDeptService {
+@RequestMapping("/dept")
+public interface IDeptFacade {
 
     /**
      * 通过ID查询
@@ -20,7 +20,7 @@ public interface IDeptService {
      * @param id ID
      * @return SysDept
      */
-    @GetMapping("/dept/{id}")
+    @GetMapping("/{id}")
     SysDept get(@PathVariable(value="id") Integer id);
 
     /**
@@ -28,7 +28,7 @@ public interface IDeptService {
      *
      * @return 树形菜单
      */
-    @GetMapping(value = "/dept/tree")
+    @GetMapping(value = "/tree")
     List<DeptTree> getDeptTree() ;
 
     /**
@@ -37,7 +37,7 @@ public interface IDeptService {
      * @param sysDept 实体
      * @return success/false
      */
-    @PostMapping(value="/dept")
+    @PostMapping()
     Boolean add(@RequestBody SysDept  sysDept);
 
     /**
@@ -46,7 +46,7 @@ public interface IDeptService {
      * @param id ID
      * @return success/false
      */
-    @DeleteMapping("/dept/{id}")
+    @DeleteMapping("/{id}")
     Boolean delete(@PathVariable(value="id") Integer id);
 
     /**
@@ -55,6 +55,6 @@ public interface IDeptService {
      * @param sysDept 实体
      * @return success/false
      */
-    @PutMapping("/dept")
+    @PutMapping()
     Boolean edit(@RequestBody SysDept sysDept) ;
 }

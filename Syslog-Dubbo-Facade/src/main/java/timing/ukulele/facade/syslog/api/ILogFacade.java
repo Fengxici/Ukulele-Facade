@@ -1,7 +1,6 @@
 package timing.ukulele.facade.syslog.api;
 
 import com.github.pagehelper.Page;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.common.data.ResponseVO;
@@ -9,7 +8,7 @@ import timing.ukulele.facade.syslog.model.persistent.SysLog;
 
 import java.util.Map;
 
-public interface ILogService {
+public interface ILogFacade {
     /**
      * 添加日志
      *
@@ -34,6 +33,6 @@ public interface ILogService {
      * @return success/false
      */
     @DeleteMapping("/{id}")
-    ResponseVO delete(@PathVariable(value="id") Long id);
+    ResponseVO delete(@PathVariable(value = "id") Long id);
 
 }
