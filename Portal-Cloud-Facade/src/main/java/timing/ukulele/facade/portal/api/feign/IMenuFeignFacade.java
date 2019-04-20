@@ -1,57 +1,68 @@
 package timing.ukulele.facade.portal.api.feign;
 
 import org.springframework.cloud.openfeign.FeignClient;
+import timing.ukulele.common.data.ResponseCode;
 import timing.ukulele.common.data.ResponseData;
-import timing.ukulele.common.data.ResponseVO;
 import timing.ukulele.facade.portal.api.IMenuFacade;
 import timing.ukulele.facade.portal.model.data.MenuTree;
 import timing.ukulele.facade.portal.model.persistent.SysMenu;
 import timing.ukulele.facade.portal.model.view.MenuVO;
 
 import java.util.List;
+import java.util.Map;
 
 @FeignClient(name = "portal-service", fallback = IMenuFeignFacade.MenuHystrixClientFallback.class)
 public interface IMenuFeignFacade extends IMenuFacade {
     class MenuHystrixClientFallback implements IMenuFeignFacade {
 
         @Override
-        public List<MenuVO> findMenuByRole(String role) {
-            return null;
+        public ResponseData<SysMenu> menu(Long id) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public List<MenuTree> userMenu(String roles) {
-            return null;
+        public ResponseData<Boolean> menu(SysMenu sysMenu) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public List<MenuTree> getMenuTree() {
-            return null;
+        public ResponseData<Boolean> menuDel(Long id) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public SysMenu menu(Long id) {
-            return null;
+        public ResponseData<Boolean> menuUpdate(SysMenu sysMenu) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseVO menu(SysMenu sysMenu) {
-            return null;
+        public ResponseData<List<MenuTree>> getMenuTree() {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseVO menuDel(Long id) {
-            return null;
+        public ResponseData<List<SysMenu>> getByParam(Map<String, Object> params) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseVO menuUpdate(SysMenu sysMenu) {
-            return null;
+        public ResponseData<List<MenuVO>> findMenuByRole(String role) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
+        }
+
+        @Override
+        public ResponseData<Boolean> deleteRoleMenu(Long roleId, Long menuId) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
+        }
+
+        @Override
+        public ResponseData<Boolean> addRoleMenu(Long roleId, Long menuId) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
         public ResponseData<List<SysMenu>> getMenuByUserId(Long userId) {
-            return null;
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
     }
 }

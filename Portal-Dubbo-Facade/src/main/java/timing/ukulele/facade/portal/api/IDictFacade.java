@@ -1,17 +1,14 @@
 package timing.ukulele.facade.portal.api;
 
-
-import com.github.pagehelper.Page;
 import org.springframework.web.bind.annotation.*;
-import timing.ukulele.common.data.ResponseVO;
+import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.facade.portal.model.persistent.SysDict;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * <p>
- * 字典表 前端控制器
+ * 字典表
  * </p>
  */
 @RequestMapping("/dict")
@@ -24,16 +21,7 @@ public interface IDictFacade {
      * @return 字典信息
      */
     @GetMapping("/{id}")
-    SysDict dict(@PathVariable(value = "id") Long id);
-
-    /**
-     * 分页查询字典信息
-     *
-     * @param params 分页对象
-     * @return 分页对象
-     */
-    @GetMapping("/dictPage")
-    Page dictPage(@RequestParam Map<String, Object> params);
+    ResponseData<SysDict> dict(@PathVariable(value = "id") Long id);
 
     /**
      * 通过字典类型查找字典
@@ -42,7 +30,7 @@ public interface IDictFacade {
      * @return 同类型字典
      */
     @GetMapping("/type/{type}")
-    List<SysDict> findDictByType(@PathVariable(value = "type") String type);
+    ResponseData<List<SysDict>> findDictByType(@PathVariable(value = "type") String type);
 
     /**
      * 添加字典
@@ -51,17 +39,16 @@ public interface IDictFacade {
      * @return success、false
      */
     @PostMapping()
-    ResponseVO dict(@RequestBody SysDict sysDict);
+    ResponseData<Boolean> dict(@RequestBody SysDict sysDict);
 
     /**
      * 删除字典，并且清除字典缓存
      *
      * @param id   ID
      * @param type 类型
-     * @return R
      */
     @DeleteMapping("/dict/{id}/{type}")
-    ResponseVO deleteDict(@PathVariable(value = "id") Integer id, @PathVariable(value = "type") String type);
+    ResponseData<Boolean> deleteDict(@PathVariable(value = "id") Long id, @PathVariable(value = "type") String type);
 
     /**
      * 修改字典
@@ -70,5 +57,5 @@ public interface IDictFacade {
      * @return success/false
      */
     @PutMapping()
-    ResponseVO editDict(@RequestBody SysDict sysDict);
+    ResponseData<Boolean> editDict(@RequestBody SysDict sysDict);
 }

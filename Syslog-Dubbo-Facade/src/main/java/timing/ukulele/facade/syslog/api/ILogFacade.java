@@ -1,12 +1,11 @@
 package timing.ukulele.facade.syslog.api;
 
-import com.github.pagehelper.Page;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import timing.ukulele.common.data.ResponseData;
-import timing.ukulele.common.data.ResponseVO;
 import timing.ukulele.facade.syslog.model.persistent.SysLog;
-
-import java.util.Map;
 
 public interface ILogFacade {
     /**
@@ -18,21 +17,12 @@ public interface ILogFacade {
     ResponseData<SysLog> add(@RequestBody SysLog log);
 
     /**
-     * 分页查询日志信息
-     *
-     * @param params 分页对象
-     * @return 分页对象
-     */
-    @GetMapping("/logPage")
-    Page logPage(@RequestParam Map<String, Object> params);
-
-    /**
      * 根据ID
      *
      * @param id ID
      * @return success/false
      */
     @DeleteMapping("/{id}")
-    ResponseVO delete(@PathVariable(value = "id") Long id);
+    ResponseData<Boolean> delete(@PathVariable(value = "id") Long id);
 
 }

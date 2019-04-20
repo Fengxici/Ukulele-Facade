@@ -68,7 +68,7 @@ public class MenuVO implements Serializable {
     /**
      * 1--正常 0--删除
      */
-    private String enable_;
+    private String enable;
 
 
     @Override

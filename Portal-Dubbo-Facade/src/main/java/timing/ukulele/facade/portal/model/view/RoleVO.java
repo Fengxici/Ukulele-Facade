@@ -12,11 +12,11 @@ import java.util.Date;
 public class RoleVO implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private Integer roleId;
+    private Long id;
     private String roleName;
     private String roleCode;
     private String roleDesc;
     private Date createTime;
     private Date updateTime;
-    private String delFlag;
+    private String enable;
 }

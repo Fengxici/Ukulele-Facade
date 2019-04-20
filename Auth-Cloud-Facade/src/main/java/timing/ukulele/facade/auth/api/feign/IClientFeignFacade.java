@@ -1,12 +1,10 @@
 package timing.ukulele.facade.auth.api.feign;
 
-import com.github.pagehelper.Page;
 import org.springframework.cloud.openfeign.FeignClient;
+import timing.ukulele.common.data.ResponseCode;
 import timing.ukulele.common.data.ResponseData;
-import timing.ukulele.common.data.ResponseVO;
 import timing.ukulele.facade.auth.api.IClientFacade;
 import timing.ukulele.facade.auth.model.persistent.OAuthClientDetailsModel;
-import timing.ukulele.web.pojo.ResponseCode;
 
 import java.util.List;
 import java.util.Map;
@@ -16,33 +14,28 @@ public interface IClientFeignFacade extends IClientFacade {
     class HystrixClientFallback implements IClientFeignFacade {
 
         @Override
-        public ResponseData<List<OAuthClientDetailsModel>> getAllClient() {
-            return new ResponseData<>(ResponseCode.ERROR.getCode(), ResponseCode.ERROR.getMessage());
+        public ResponseData<List<OAuthClientDetailsModel>> getClientByParam(Map<String, Object> params) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public OAuthClientDetailsModel get(Integer id) {
-            return null;
+        public ResponseData<OAuthClientDetailsModel> get(Integer id) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public Page page(Map<String, Object> params) {
-            return null;
+        public ResponseData<Boolean> add(OAuthClientDetailsModel client) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseVO add(OAuthClientDetailsModel client) {
-            return null;
+        public ResponseData<Boolean> delete(String id) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseVO delete(String id) {
-            return null;
-        }
-
-        @Override
-        public ResponseVO edit(OAuthClientDetailsModel client) {
-            return null;
+        public ResponseData<Boolean> edit(OAuthClientDetailsModel client) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
     }
 }

@@ -1,17 +1,17 @@
 package timing.ukulele.facade.portal.api;
 
-import com.github.pagehelper.Page;
 import org.springframework.web.bind.annotation.*;
 import timing.ukulele.common.data.ResponseData;
-import timing.ukulele.common.data.ResponseVO;
-import timing.ukulele.facade.portal.model.data.RoleDTO;
 import timing.ukulele.facade.portal.model.persistent.SysRole;
+import timing.ukulele.facade.portal.model.view.RoleVO;
 
 import java.util.List;
 import java.util.Map;
 
 @RequestMapping("/role")
 public interface IRoleFacade {
+    //==========================Role实体操作===============================//
+
     /**
      * 通过ID查询角色信息
      *
@@ -19,64 +19,74 @@ public interface IRoleFacade {
      * @return 角色信息
      */
     @GetMapping("/{id}")
-    SysRole role(@PathVariable(value = "id") Long id);
+    ResponseData<SysRole> role(@PathVariable(value = "id") Long id);
+
+    /**
+     * 根据参数获取角色列表
+     *
+     * @param params 参数集合
+     * @return 角色列表
+     */
+    @GetMapping("getByParam")
+    ResponseData<List<SysRole>> getRoleByParam(@RequestParam Map<String, Object> params);
 
     /**
      * 添加角色
      *
-     * @param roleDto 角色信息
+     * @param role 角色信息
      * @return success、false
      */
     @PostMapping()
-    ResponseVO role(@RequestBody RoleDTO roleDto);
+    ResponseData<Boolean> role(@RequestBody RoleVO role);
 
     /**
      * 修改角色
      *
-     * @param roleDto 角色信息
+     * @param role 角色信息
      * @return success/false
      */
     @PutMapping()
-    ResponseVO roleUpdate(@RequestBody RoleDTO roleDto);
+    ResponseData<Boolean> roleUpdate(@RequestBody RoleVO role);
 
+    /**
+     * 删除角色
+     *
+     * @param id 角色ID
+     * @return
+     */
     @DeleteMapping("/{id}")
-    ResponseVO roleDel(@PathVariable(value = "id") Long id);
+    ResponseData<Boolean> roleDel(@PathVariable(value = "id") Long id);
+
+    //======================================================================//
+
+    //============================User_Role操作==================================//
 
     /**
-     * 返回角色的菜单集合
+     * 获取用户角色
      *
-     * @param roleName 角色名称
-     * @return 属性集合
+     * @param userId 用户ID
+     * @return 用户角色集合
      */
-    @GetMapping("/roleTree/{roleName}")
-    List<Integer> roleTree(@PathVariable(value = "roleName") String roleName);
-
-    /**
-     * 获取角色列表
-     *
-     * @param deptId 部门ID
-     * @return 角色列表
-     */
-    @GetMapping("/roleList/{deptId}")
-    List<SysRole> roleList(@PathVariable(value = "deptId") Long deptId);
-
-    /**
-     * 分页查询角色信息
-     *
-     * @param params 分页对象
-     * @return 分页对象
-     */
-    @GetMapping("/rolePage")
-    Page rolePage(@RequestParam Map<String, Object> params);
-
-    /**
-     * 更新角色菜单
-     *
-     * @return success、false
-     */
-    @PutMapping("/roleMenuUpd")
-    ResponseVO roleMenuUpd(@RequestBody Map data);
-
     @GetMapping("/user/{userId}")
     ResponseData<List<SysRole>> getRoleByUserId(@PathVariable(value = "userId") Long userId);
+
+    /**
+     * 删除用户角色
+     *
+     * @param userId 用户ID
+     * @param roleId 角色ID 若不传则删除用户所有角色
+     * @return 成功/失败
+     */
+    @DeleteMapping("/user/{userId}/{roleId}")
+    ResponseData<Boolean> deleteUserRole(@PathVariable(value = "userId") Long userId, @PathVariable(value = "roleId", required = false) Long roleId);
+
+    /**
+     * 添加用户角色
+     *
+     * @param userId 用户ID
+     * @param roleId 角色ID
+     * @return 成功/失败
+     */
+    @PostMapping("/user/{userId}/{roleId}")
+    ResponseData<Boolean> addUserRole(@PathVariable(value = "userId") Long userId, @PathVariable(value = "roleId") Long roleId);
 }

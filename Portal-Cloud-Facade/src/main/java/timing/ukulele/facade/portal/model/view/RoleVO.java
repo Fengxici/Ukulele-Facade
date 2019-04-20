@@ -12,7 +12,7 @@ import java.util.Date;
 public class RoleVO implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private Long roleId;
+    private Long id;
     private String roleName;
     private String roleCode;
     private String roleDesc;

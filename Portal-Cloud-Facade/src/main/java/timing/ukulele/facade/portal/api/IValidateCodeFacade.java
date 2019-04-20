@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * 验证码提供
+ * 验证码
  */
 public interface IValidateCodeFacade {
 

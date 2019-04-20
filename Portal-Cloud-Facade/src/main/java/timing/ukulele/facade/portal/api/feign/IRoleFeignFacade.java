@@ -1,12 +1,11 @@
 package timing.ukulele.facade.portal.api.feign;
 
-import com.github.pagehelper.Page;
 import org.springframework.cloud.openfeign.FeignClient;
+import timing.ukulele.common.data.ResponseCode;
 import timing.ukulele.common.data.ResponseData;
-import timing.ukulele.common.data.ResponseVO;
 import timing.ukulele.facade.portal.api.IRoleFacade;
-import timing.ukulele.facade.portal.model.data.RoleDTO;
 import timing.ukulele.facade.portal.model.persistent.SysRole;
+import timing.ukulele.facade.portal.model.view.RoleVO;
 
 import java.util.List;
 import java.util.Map;
@@ -16,48 +15,43 @@ public interface IRoleFeignFacade extends IRoleFacade {
     class RoleHystrixClientFallback implements IRoleFeignFacade {
 
         @Override
-        public SysRole role(Long id) {
-            return null;
+        public ResponseData<SysRole> role(Long id) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseVO role(RoleDTO roleDto) {
-            return null;
+        public ResponseData<List<SysRole>> getRoleByParam(Map<String, Object> params) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseVO roleUpdate(RoleDTO roleDto) {
-            return null;
+        public ResponseData<Boolean> role(RoleVO role) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseVO roleDel(Long id) {
-            return null;
+        public ResponseData<Boolean> roleUpdate(RoleVO role) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public List<Integer> roleTree(String roleName) {
-            return null;
-        }
-
-        @Override
-        public List<SysRole> roleList(Long deptId) {
-            return null;
-        }
-
-        @Override
-        public Page rolePage(Map<String, Object> params) {
-            return null;
-        }
-
-        @Override
-        public ResponseVO roleMenuUpd(Map data) {
-            return null;
+        public ResponseData<Boolean> roleDel(Long id) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
         public ResponseData<List<SysRole>> getRoleByUserId(Long userId) {
-            return null;
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
+        }
+
+        @Override
+        public ResponseData<Boolean> deleteUserRole(Long userId, Long roleId) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
+        }
+
+        @Override
+        public ResponseData<Boolean> addUserRole(Long userId, Long roleId) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
     }
 }
