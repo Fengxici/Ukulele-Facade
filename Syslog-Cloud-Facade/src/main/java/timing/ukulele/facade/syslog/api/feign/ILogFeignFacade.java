@@ -6,19 +6,27 @@ import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.facade.syslog.api.ILogFacade;
 import timing.ukulele.facade.syslog.model.persistent.SysLog;
 
+import java.util.List;
+import java.util.Map;
+
 
 @FeignClient(name = "syslog-service", fallback = ILogFeignFacade.SysLogHystrixClientFallback.class)
 public interface ILogFeignFacade extends ILogFacade {
     class SysLogHystrixClientFallback implements ILogFeignFacade {
 
         @Override
-        public ResponseData<SysLog> add(SysLog log) {
+        public ResponseData<Boolean> add(SysLog log) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
         public ResponseData<Boolean> delete(Long id) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
+        }
+
+        @Override
+        public ResponseData<List<SysLog>> getByParam(Map<String, Object> param) {
+            return null;
         }
     }
 }

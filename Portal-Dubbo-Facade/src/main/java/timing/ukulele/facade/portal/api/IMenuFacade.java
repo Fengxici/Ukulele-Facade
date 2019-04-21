@@ -108,4 +108,13 @@ public interface IMenuFacade {
      */
     @GetMapping("/user/{userId}")
     ResponseData<List<SysMenu>> getMenuByUserId(@PathVariable(value = "userId") Long userId);
+
+    /**
+     * 根据角色名获取用户的菜单
+     *
+     * @param roles 角色名
+     * @return
+     */
+    @GetMapping("/user")
+    ResponseData<List<MenuTree>> getUserMenu(String roles);
 }

@@ -1,11 +1,11 @@
 package timing.ukulele.facade.syslog.api;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.facade.syslog.model.persistent.SysLog;
+
+import java.util.List;
+import java.util.Map;
 
 public interface ILogFacade {
     /**
@@ -14,7 +14,7 @@ public interface ILogFacade {
      * @param log 日志实体
      */
     @PostMapping("/log")
-    ResponseData<SysLog> add(@RequestBody SysLog log);
+    ResponseData<Boolean> add(@RequestBody SysLog log);
 
     /**
      * 根据ID
@@ -24,5 +24,9 @@ public interface ILogFacade {
      */
     @DeleteMapping("/{id}")
     ResponseData<Boolean> delete(@PathVariable(value = "id") Long id);
+
+
+    @GetMapping("/log/getByParam")
+    ResponseData<List<SysLog>> getByParam(Map<String,Object> param);
 
 }

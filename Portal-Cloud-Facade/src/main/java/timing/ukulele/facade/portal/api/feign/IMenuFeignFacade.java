@@ -1,6 +1,7 @@
 package timing.ukulele.facade.portal.api.feign;
 
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.RequestHeader;
 import timing.ukulele.common.data.ResponseCode;
 import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.facade.portal.api.IMenuFacade;
@@ -63,6 +64,11 @@ public interface IMenuFeignFacade extends IMenuFacade {
         @Override
         public ResponseData<List<SysMenu>> getMenuByUserId(Long userId) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
+        }
+
+        @Override
+        public ResponseData<List<MenuTree>> getUserMenu(String roles) {
+            return null;
         }
     }
 }

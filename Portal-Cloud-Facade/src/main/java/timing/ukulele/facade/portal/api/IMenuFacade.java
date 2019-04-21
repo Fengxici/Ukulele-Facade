@@ -2,7 +2,6 @@ package timing.ukulele.facade.portal.api;
 
 import org.springframework.web.bind.annotation.*;
 import timing.ukulele.common.data.ResponseData;
-import timing.ukulele.common.data.ResponseVO;
 import timing.ukulele.facade.portal.model.data.MenuTree;
 import timing.ukulele.facade.portal.model.persistent.SysMenu;
 import timing.ukulele.facade.portal.model.view.MenuVO;
@@ -109,4 +108,13 @@ public interface IMenuFacade {
      */
     @GetMapping("/user/{userId}")
     ResponseData<List<SysMenu>> getMenuByUserId(@PathVariable(value = "userId") Long userId);
+
+    /**
+     * 根据角色名获取用户的菜单
+     *
+     * @param roles 角色名
+     * @return
+     */
+    @GetMapping("/user")
+    ResponseData<List<MenuTree>> getUserMenu(String roles);
 }
