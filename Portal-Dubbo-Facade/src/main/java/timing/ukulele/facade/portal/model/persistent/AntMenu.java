@@ -8,8 +8,8 @@ import timing.ukulele.persistence.model.BaseModel;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-@TableName("sys_menu_ant")
-public class SysMenuAnt extends BaseModel {
+@TableName("ant_menu")
+public class AntMenu extends BaseModel {
     private long parentId;
     @TableField("key_")
     private String key;
@@ -43,5 +43,5 @@ public class SysMenuAnt extends BaseModel {
     private boolean open;
 
     @TableField(exist = false)
-    private SysAntIcon antIcon;
+    private AntIcon antIcon;
 }

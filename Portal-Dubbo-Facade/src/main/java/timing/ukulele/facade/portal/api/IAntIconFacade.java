@@ -2,7 +2,7 @@ package timing.ukulele.facade.portal.api;
 
 import org.springframework.web.bind.annotation.*;
 import timing.ukulele.common.data.ResponseData;
-import timing.ukulele.facade.portal.model.persistent.SysAntIcon;
+import timing.ukulele.facade.portal.model.persistent.AntIcon;
 
 import java.util.List;
 import java.util.Map;
@@ -16,7 +16,7 @@ public interface IAntIconFacade {
      * @return SysDept
      */
     @GetMapping("/{id}")
-    ResponseData<SysAntIcon> get(@PathVariable(value = "id") Long id);
+    ResponseData<AntIcon> get(@PathVariable(value = "id") Long id);
 
     /**
      * 根据参数获取列表
@@ -25,7 +25,7 @@ public interface IAntIconFacade {
      * @return 列表
      */
     @GetMapping("/getByParam")
-    ResponseData<List<SysAntIcon>> getDeptByParam(@RequestParam("params") Map<String, Object> params);
+    ResponseData<List<AntIcon>> getByParam(@RequestParam("params") Map<String, Object> params);
 
 
     /**
@@ -35,7 +35,7 @@ public interface IAntIconFacade {
      * @return success/false
      */
     @PostMapping()
-    ResponseData<Boolean> add(@RequestBody SysAntIcon sysAntIcon);
+    ResponseData<Boolean> add(@RequestBody AntIcon sysAntIcon);
     /**
      * 删除
      *
@@ -52,5 +52,5 @@ public interface IAntIconFacade {
      * @return success/false
      */
     @PutMapping()
-    ResponseData<Boolean> edit(@RequestBody SysAntIcon sysAntIcon);
+    ResponseData<Boolean> edit(@RequestBody AntIcon sysAntIcon);
 }

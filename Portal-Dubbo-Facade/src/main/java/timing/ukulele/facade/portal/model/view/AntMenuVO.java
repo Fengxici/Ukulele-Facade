@@ -1,14 +1,15 @@
-package timing.ukulele.facade.portal.model.data;
+package timing.ukulele.facade.portal.model.view;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import timing.ukulele.common.data.TreeNode;
-import timing.ukulele.facade.portal.model.persistent.SysAntIcon;
+import timing.ukulele.facade.portal.model.persistent.AntIcon;
 
-@EqualsAndHashCode(callSuper = true)
+import java.io.Serializable;
+
 @Data
-public class MenuAntTree extends TreeNode {
+public class AntMenuVO implements Serializable {
+    private Long id;
     private Boolean enable;
+    private long parentId;
     private String key;
     private String text;
     private String i18n;
@@ -29,5 +30,5 @@ public class MenuAntTree extends TreeNode {
     private boolean shortcutRoot;
     private boolean reuse;
     private boolean open;
-    private SysAntIcon antIcon;
+    private AntIcon antIcon;
 }

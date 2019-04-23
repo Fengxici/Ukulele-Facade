@@ -8,8 +8,8 @@ import timing.ukulele.persistence.model.BaseModel;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-@TableName("sys_ant_icon")
-public class SysAntIcon extends BaseModel {
+@TableName("ant_icon")
+public class AntIcon extends BaseModel {
     @TableField("type_")
     private String type;
     @TableField("value_")

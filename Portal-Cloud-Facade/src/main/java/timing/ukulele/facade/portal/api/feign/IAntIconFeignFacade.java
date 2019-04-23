@@ -4,7 +4,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import timing.ukulele.common.data.ResponseCode;
 import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.facade.portal.api.IAntIconFacade;
-import timing.ukulele.facade.portal.model.persistent.SysAntIcon;
+import timing.ukulele.facade.portal.model.persistent.AntIcon;
 
 import java.util.List;
 import java.util.Map;
@@ -14,17 +14,17 @@ public interface IAntIconFeignFacade extends IAntIconFacade {
     class AntIconHystrixClientFallback implements IAntIconFeignFacade{
 
         @Override
-        public ResponseData<SysAntIcon> get(Long id) {
+        public ResponseData<AntIcon> get(Long id) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseData<List<SysAntIcon>> getDeptByParam(Map<String, Object> params) {
+        public ResponseData<List<AntIcon>> getByParam(Map<String, Object> params) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseData<Boolean> add(SysAntIcon sysAntIcon) {
+        public ResponseData<Boolean> add(AntIcon sysAntIcon) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
@@ -34,7 +34,7 @@ public interface IAntIconFeignFacade extends IAntIconFacade {
         }
 
         @Override
-        public ResponseData<Boolean> edit(SysAntIcon sysAntIcon) {
+        public ResponseData<Boolean> edit(AntIcon sysAntIcon) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
     }

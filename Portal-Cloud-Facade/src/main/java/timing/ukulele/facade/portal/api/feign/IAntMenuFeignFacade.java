@@ -3,33 +3,33 @@ package timing.ukulele.facade.portal.api.feign;
 import org.springframework.cloud.openfeign.FeignClient;
 import timing.ukulele.common.data.ResponseCode;
 import timing.ukulele.common.data.ResponseData;
-import timing.ukulele.facade.portal.api.IMenuAntFacade;
-import timing.ukulele.facade.portal.model.data.MenuAntTree;
-import timing.ukulele.facade.portal.model.persistent.SysMenuAnt;
+import timing.ukulele.facade.portal.api.IAntMenuFacade;
+import timing.ukulele.facade.portal.model.data.AntMenuTree;
+import timing.ukulele.facade.portal.model.persistent.AntMenu;
 
 import java.util.List;
 import java.util.Map;
-@FeignClient(name = "portal-service", fallback = IMenuAntFeignFacade.MenuAntHystrixClientFallback.class)
-public interface IMenuAntFeignFacade extends IMenuAntFacade {
-    class MenuAntHystrixClientFallback implements IMenuAntFacade{
+@FeignClient(name = "portal-service", fallback = IAntMenuFeignFacade.MenuAntHystrixClientFallback.class)
+public interface IAntMenuFeignFacade extends IAntMenuFacade {
+    class MenuAntHystrixClientFallback implements IAntMenuFacade {
 
         @Override
-        public ResponseData<SysMenuAnt> get(Long id) {
+        public ResponseData<AntMenu> get(Long id) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseData<List<SysMenuAnt>> getDeptByParam(Map<String, Object> params) {
+        public ResponseData<List<AntMenu>> getByParam(Map<String, Object> params) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseData<List<MenuAntTree>> getDeptTree() {
+        public ResponseData<List<AntMenuTree>> getDeptTree() {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseData<Boolean> add(SysMenuAnt sysMenuAnt) {
+        public ResponseData<Boolean> add(AntMenu sysMenuAnt) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
@@ -39,7 +39,7 @@ public interface IMenuAntFeignFacade extends IMenuAntFacade {
         }
 
         @Override
-        public ResponseData<Boolean> edit(SysMenuAnt sysMenuAnt) {
+        public ResponseData<Boolean> edit(AntMenu sysMenuAnt) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
     }

@@ -1,6 +1,5 @@
 package timing.ukulele.facade.portal.model.persistent;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 /**
@@ -9,7 +8,6 @@ import lombok.Data;
  * </p>
  */
 @Data
-@TableName("sys_user_role")
 public class SysUserRole {
 
     /**
