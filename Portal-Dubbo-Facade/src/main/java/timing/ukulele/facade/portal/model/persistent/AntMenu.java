@@ -25,8 +25,7 @@ public class AntMenu extends BaseModel {
     private String externalLink;
     @TableField("target_")
     private String target;
-    @TableField("icon_")
-    private long icon;
+    private long iconId;
     @TableField("disabled_")
     private boolean disabled;
     @TableField("hide_")

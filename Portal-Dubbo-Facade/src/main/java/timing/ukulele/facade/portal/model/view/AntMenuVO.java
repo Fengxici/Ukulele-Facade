@@ -18,7 +18,8 @@ public class AntMenuVO implements Serializable {
     private boolean linkExact;
     private String externalLink;
     private String target;
-    private long icon;
+    private long iconId;
+    private String icon;
     private int badge;
     private boolean badgeDot;
     private String badgeStatus;

@@ -4,8 +4,8 @@ import org.springframework.web.bind.annotation.*;
 import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.facade.portal.model.persistent.AntIcon;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
-import java.util.Map;
 
 @RequestMapping("/ant-icon")
 public interface IAntIconFacade {
@@ -21,11 +21,11 @@ public interface IAntIconFacade {
     /**
      * 根据参数获取列表
      *
-     * @param params 参数集合
+     * @param request 参数集合
      * @return 列表
      */
     @GetMapping("/getByParam")
-    ResponseData<List<AntIcon>> getByParam(@RequestParam("params") Map<String, Object> params);
+    ResponseData<List<AntIcon>> getByParam(HttpServletRequest request);
 
 
     /**

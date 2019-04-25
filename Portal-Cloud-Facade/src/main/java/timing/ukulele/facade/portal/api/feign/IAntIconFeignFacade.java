@@ -6,12 +6,12 @@ import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.facade.portal.api.IAntIconFacade;
 import timing.ukulele.facade.portal.model.persistent.AntIcon;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
-import java.util.Map;
 
 @FeignClient(name = "portal-service", fallback = IAntIconFeignFacade.AntIconHystrixClientFallback.class)
 public interface IAntIconFeignFacade extends IAntIconFacade {
-    class AntIconHystrixClientFallback implements IAntIconFeignFacade{
+    class AntIconHystrixClientFallback implements IAntIconFeignFacade {
 
         @Override
         public ResponseData<AntIcon> get(Long id) {
@@ -19,7 +19,7 @@ public interface IAntIconFeignFacade extends IAntIconFacade {
         }
 
         @Override
-        public ResponseData<List<AntIcon>> getByParam(Map<String, Object> params) {
+        public ResponseData<List<AntIcon>> getByParam(HttpServletRequest request) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 

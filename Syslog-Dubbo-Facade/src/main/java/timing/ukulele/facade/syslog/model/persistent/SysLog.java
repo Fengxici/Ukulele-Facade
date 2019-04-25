@@ -1,21 +1,25 @@
 package timing.ukulele.facade.syslog.model.persistent;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import timing.ukulele.persistence.model.BaseModel;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * <p>
  * 日志表
  * </p>
  */
-@EqualsAndHashCode(callSuper = true)
 @Data
 @TableName("sys_log")
-public class SysLog extends BaseModel {
+public class SysLog implements Serializable {
 
+    @TableId(value = "id_", type = IdType.ID_WORKER)
+    private Long id;
     /**
      * 日志类型
      */
@@ -58,6 +62,14 @@ public class SysLog extends BaseModel {
      */
     @TableField("exception_")
     private String exception;
+    /**
+     * 创建人
+     */
+    private String createBy;
+    /**
+     * 创建时间
+     */
+    private Date createTime;
     /**
      * 服务ID
      */

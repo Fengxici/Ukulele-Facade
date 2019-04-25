@@ -3,7 +3,7 @@ package timing.ukulele.facade.portal.model.data;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import timing.ukulele.common.data.TreeNode;
-import timing.ukulele.facade.portal.model.persistent.AntIcon;
+import timing.ukulele.facade.portal.model.view.AntIconVO;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -17,7 +17,8 @@ public class AntMenuTree extends TreeNode {
     private boolean linkExact;
     private String externalLink;
     private String target;
-    private long icon;
+    private long iconId;
+    private AntIconVO icon;
     private int badge;
     private boolean badgeDot;
     private String badgeStatus;
@@ -29,5 +30,4 @@ public class AntMenuTree extends TreeNode {
     private boolean shortcutRoot;
     private boolean reuse;
     private boolean open;
-    private AntIcon antIcon;
 }
