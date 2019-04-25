@@ -8,7 +8,7 @@ import timing.ukulele.facade.portal.model.persistent.AntMenu;
 import java.util.List;
 import java.util.Map;
 
-@RequestMapping("/menu-ant")
+@RequestMapping("/ant-menu")
 public interface IAntMenuFacade {
     /**
      * 通过ID查询
