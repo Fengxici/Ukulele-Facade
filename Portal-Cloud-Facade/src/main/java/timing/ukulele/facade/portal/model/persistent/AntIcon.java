@@ -17,7 +17,7 @@ public class AntIcon extends BaseModel {
     @TableField("theme_")
     private String theme;
     @TableField("spin_")
-    private boolean spin;
+    private Boolean spin;
     private String twoToneColor;
     @TableField("iconfont_")
     private String iconfont;
