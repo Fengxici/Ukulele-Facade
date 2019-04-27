@@ -6,6 +6,7 @@ import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.facade.syslog.api.ILogFacade;
 import timing.ukulele.facade.syslog.model.persistent.SysLog;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 
@@ -25,7 +26,7 @@ public interface ILogFeignFacade extends ILogFacade {
         }
 
         @Override
-        public ResponseData<List<SysLog>> getByParam(Map<String, Object> param) {
+        public ResponseData<List<SysLog>> getByParam(HttpServletRequest request) {
             return null;
         }
     }

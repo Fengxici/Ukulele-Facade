@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.*;
 import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.facade.syslog.model.persistent.SysLog;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 
@@ -27,6 +28,6 @@ public interface ILogFacade {
 
 
     @GetMapping("/log/getByParam")
-    ResponseData<List<SysLog>> getByParam(Map<String, Object> param);
+    ResponseData<List<SysLog>> getByParam(HttpServletRequest request);
 
 }
