@@ -38,23 +38,13 @@ public interface IUserFacade {
     ResponseData<List<SysUser>> getUserByParam(@RequestParam Map<String, Object> params);
 
     /**
-     * 获取当前用户信息（角色、权限）
-     * 并且异步初始化用户部门信息
-     *
-     * @param userVo 当前用户信息
-     * @return 用户名
-     */
-    @GetMapping("/info")
-    ResponseData<UserVO> user(UserVO userVo);
-
-    /**
      * 通过ID查询当前用户信息
      *
      * @param id ID
      * @return 用户信息
      */
     @GetMapping("/{id}")
-    ResponseData<UserVO> user(@PathVariable(value = "id") Integer id);
+    ResponseData<UserVO> user(@PathVariable(value = "id") Long id);
 
     /**
      * 删除用户信息
@@ -63,24 +53,24 @@ public interface IUserFacade {
      * @return R
      */
     @DeleteMapping("/{id}")
-    ResponseData<Boolean> userDel(@PathVariable(value = "id") Integer id);
+    ResponseData<Boolean> userDel(@PathVariable(value = "id") Long id);
 
     /**
      * 添加用户
      *
-     * @param userDto 用户信息
+     * @param user 用户信息
      * @return success/false
      */
     @PostMapping
-    ResponseData<Boolean> user(@RequestBody UserDTO userDto);
+    ResponseData<Boolean> user(@RequestBody UserVO user);
 
     /**
      * 更新用户信息
      *
-     * @param userDto 用户信息
+     * @param user 用户信息
      * @return R
      */
     @PutMapping
-    ResponseData<Boolean> userUpdate(@RequestBody UserDTO userDto);
+    ResponseData<Boolean> userUpdate(@RequestBody UserVO user);
 
 }

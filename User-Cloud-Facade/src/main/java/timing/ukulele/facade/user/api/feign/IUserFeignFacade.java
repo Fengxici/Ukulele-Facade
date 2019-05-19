@@ -30,27 +30,22 @@ public interface IUserFeignFacade extends IUserFacade {
         }
 
         @Override
-        public ResponseData<UserVO> user(UserVO userVo) {
+        public ResponseData<UserVO> user(Long id) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseData<UserVO> user(Integer id) {
+        public ResponseData<Boolean> userDel(Long id) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseData<Boolean> userDel(Integer id) {
+        public ResponseData<Boolean> user(UserVO user) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseData<Boolean> user(UserDTO userDto) {
-            return new ResponseData<>(ResponseCode.FACADE_ERROR);
-        }
-
-        @Override
-        public ResponseData<Boolean> userUpdate(UserDTO userDto) {
+        public ResponseData<Boolean> userUpdate(UserVO user) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
     }

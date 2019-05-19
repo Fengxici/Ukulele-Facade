@@ -6,8 +6,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import timing.ukulele.persistence.model.BaseModel;
 
-import java.math.BigDecimal;
-
 /**
  * <p>
  * 字典表
@@ -17,7 +15,6 @@ import java.math.BigDecimal;
 @Data
 @TableName("sys_dict")
 public class SysDict extends BaseModel {
-
     /**
      * 数据值
      */
@@ -29,20 +26,15 @@ public class SysDict extends BaseModel {
     @TableField("label_")
     private String label;
     /**
-     * 类型
+     * 索引表id
      */
-    @TableField("type_")
-    private String type;
-    /**
-     * 描述
-     */
-    @TableField("description_")
-    private String description;
+    @TableField("index_id")
+    private Long indexId;
     /**
      * 排序（升序）
      */
     @TableField("sort_")
-    private BigDecimal sort;
+    private Integer sort;
     /**
      * 备注信息
      */

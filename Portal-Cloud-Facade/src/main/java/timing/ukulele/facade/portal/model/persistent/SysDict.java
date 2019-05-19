@@ -6,10 +6,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import timing.ukulele.persistence.model.BaseModel;
 
-import java.io.Serializable;
-import java.math.BigDecimal;
-import java.util.Date;
-
 /**
  * <p>
  * 字典表
@@ -31,20 +27,15 @@ public class SysDict extends BaseModel {
     @TableField("label_")
     private String label;
     /**
-     * 类型
+     * 索引表id
      */
-    @TableField("type_")
-    private String type;
-    /**
-     * 描述
-     */
-    @TableField("description_")
-    private String description;
+    @TableField("index_id")
+    private Long indexId;
     /**
      * 排序（升序）
      */
     @TableField("sort_")
-    private BigDecimal sort;
+    private Integer sort;
     /**
      * 备注信息
      */
