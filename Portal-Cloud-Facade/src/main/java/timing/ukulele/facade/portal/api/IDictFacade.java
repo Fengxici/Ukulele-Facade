@@ -47,8 +47,8 @@ public interface IDictFacade {
      * @param id id
      * @return
      */
-    @DeleteMapping()
-    ResponseData<Boolean> deleteDict(@RequestParam Long id);
+    @DeleteMapping("/{id}")
+    ResponseData<Boolean> deleteDict(@PathVariable(value="id") Long id);
 
     /**
      * 通过字典索引查找字典
@@ -91,7 +91,7 @@ public interface IDictFacade {
      * @param id id
      * @return success/false
      */
-    @DeleteMapping("/index")
-    ResponseData<Boolean> deleteDictIndex(@RequestParam Long id);
+    @DeleteMapping("/index/{id}")
+    ResponseData<Boolean> deleteDictIndex(@PathVariable(value = "id") Long id);
 
 }
