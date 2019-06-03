@@ -10,7 +10,7 @@ import timing.ukulele.persistence.model.BaseModel;
 @Data
 @TableName("ant_menu")
 public class AntMenu extends BaseModel {
-    private long parentId;
+    private Long parentId;
     @TableField("key_")
     private String key;
     @TableField("text_")
@@ -18,28 +18,28 @@ public class AntMenu extends BaseModel {
     @TableField("i18n_")
     private String i18n;
     @TableField("group_")
-    private boolean group;
+    private Boolean group;
     @TableField("link_")
     private String link;
-    private boolean linkExact;
+    private Boolean linkExact;
     private String externalLink;
     @TableField("target_")
     private String target;
-    private long iconId;
+    private Long iconId;
     @TableField("disabled_")
-    private boolean disabled;
+    private Boolean disabled;
     @TableField("hide_")
-    private boolean hide;
-    private boolean hideInBreadcrumb;
+    private Boolean hide;
+    private Boolean hideInBreadcrumb;
     @TableField("acl_")
     private String acl;
     @TableField("shortcut_")
-    private boolean shortcut;
-    private boolean shortcutRoot;
+    private Boolean shortcut;
+    private Boolean shortcutRoot;
     @TableField("reuse_")
-    private boolean reuse;
+    private Boolean reuse;
     @TableField("open_")
-    private boolean open;
+    private Boolean open;
 
     @TableField(exist = false)
     private AntIcon antIcon;
