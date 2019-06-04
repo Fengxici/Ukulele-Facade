@@ -2,11 +2,13 @@ package timing.ukulele.facade.portal.model.view;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * 字典视图对象
  */
 @Data
-public class DictVO {
+public class DictVO implements Serializable {
     /**
      * 主键
      */

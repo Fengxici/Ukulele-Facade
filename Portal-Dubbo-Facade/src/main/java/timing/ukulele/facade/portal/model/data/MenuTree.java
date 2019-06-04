@@ -11,7 +11,7 @@ public class MenuTree extends TreeNode {
     private String icon;
     private String name;
     private String url;
-    private boolean spread = false;
+    private Boolean spread = false;
     private String path;
     private String component;
     private String authority;

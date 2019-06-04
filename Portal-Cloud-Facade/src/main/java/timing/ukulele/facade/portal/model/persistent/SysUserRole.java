@@ -1,6 +1,5 @@
 package timing.ukulele.facade.portal.model.persistent;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 /**

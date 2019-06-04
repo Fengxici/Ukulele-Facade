@@ -25,7 +25,7 @@ public interface IAntMenuFeignFacade extends IAntMenuFacade {
         }
 
         @Override
-        public ResponseData<List<AntMenuTree>> getDeptTree() {
+        public ResponseData<List<AntMenuTree>> getMenuTree() {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 

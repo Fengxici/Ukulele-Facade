@@ -35,7 +35,7 @@ public interface IAntMenuFacade {
      * @return 树形菜单
      */
     @GetMapping(value = "/tree")
-    ResponseData<List<AntMenuTree>> getDeptTree();
+    ResponseData<List<AntMenuTree>> getMenuTree();
 
     /**
      * 添加

@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class AntMenuVO implements Serializable {
     private Long id;
     private Boolean enable;
-    private Long parentId;
+    private Boolean parentId;
     private String key;
     private String text;
     private String i18n;
@@ -18,8 +18,8 @@ public class AntMenuVO implements Serializable {
     private Boolean linkExact;
     private String externalLink;
     private String target;
-    private Long iconId;
     private String icon;
+    private Long iconId;
     private Integer badge;
     private Boolean badgeDot;
     private String badgeStatus;

@@ -11,7 +11,7 @@ public class AntIconVO implements Serializable {
     private String type;
     private String value;
     private String theme;
-    private boolean spin;
+    private Boolean spin;
     private String twoToneColor;
     private String iconfont;
 }
