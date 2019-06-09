@@ -11,4 +11,5 @@ import timing.ukulele.common.data.TreeNode;
 @Data
 public class DeptTree extends TreeNode {
     private String name;
+    private Integer orderNum;
 }
