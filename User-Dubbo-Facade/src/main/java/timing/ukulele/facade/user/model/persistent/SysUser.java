@@ -19,13 +19,11 @@ public class SysUser extends BaseModel {
      */
     @TableField("username_")
     private String username;
+    /**
+     * 密码
+     */
     @TableField("password_")
     private String password;
-    /**
-     * 随机盐
-     */
-    @TableField("salt_")
-    private String salt;
     /**
      * 电话
      */

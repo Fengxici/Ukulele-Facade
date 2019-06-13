@@ -24,10 +24,6 @@ public class UserVO implements Serializable {
      */
     private String password;
     /**
-     * 随机盐
-     */
-    private String salt;
-    /**
      * 创建时间
      */
     private Date createTime;
@@ -36,9 +32,9 @@ public class UserVO implements Serializable {
      */
     private Date updateTime;
     /**
-     * 1-正常，0-删除
+     * 0-正常，1-删除
      */
-    private String enable;
+    private Boolean deleted;
     /**
      * 简介
      */
@@ -47,7 +43,6 @@ public class UserVO implements Serializable {
      * 头像
      */
     private String avatar;
-
     /**
      * 标签
      */

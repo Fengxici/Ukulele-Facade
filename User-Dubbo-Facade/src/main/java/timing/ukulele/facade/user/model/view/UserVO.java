@@ -35,9 +35,9 @@ public class UserVO implements Serializable {
      */
     private Date updateTime;
     /**
-     * 1-正常，0-删除
+     * 0-正常，1-删除
      */
-    private String enable;
+    private Boolean deleted;
     /**
      * 简介
      */

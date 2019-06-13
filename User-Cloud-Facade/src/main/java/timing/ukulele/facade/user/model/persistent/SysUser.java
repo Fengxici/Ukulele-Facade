@@ -13,19 +13,16 @@ import timing.ukulele.persistence.model.BaseModel;
 @EqualsAndHashCode(callSuper = true)
 @TableName("sys_user")
 public class SysUser extends BaseModel {
-
     /**
      * 用户名
      */
     @TableField("username_")
     private String username;
+    /**
+     * 密码
+     */
     @TableField("password_")
     private String password;
-    /**
-     * 随机盐
-     */
-    @TableField("salt_")
-    private String salt;
     /**
      * 电话
      */
@@ -41,7 +38,6 @@ public class SysUser extends BaseModel {
      */
     @TableField("label_")
     private String label;
-
     /**
      * 部门ID
      */
