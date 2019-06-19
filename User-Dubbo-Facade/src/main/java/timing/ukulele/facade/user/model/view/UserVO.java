@@ -4,6 +4,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 系统用户
@@ -50,7 +51,7 @@ public class UserVO implements Serializable {
     /**
      * 标签
      */
-    private String label;
+    private List<String> label;
 
     /**
      * 部门ID

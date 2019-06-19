@@ -4,6 +4,7 @@ import lombok.Data;
 import timing.ukulele.facade.portal.model.persistent.AntIcon;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 public class AntMenuVO implements Serializable {
@@ -26,7 +27,7 @@ public class AntMenuVO implements Serializable {
     private Boolean disabled;
     private Boolean hide;
     private Boolean hideInBreadcrumb;
-    private String acl;
+    private List<String> acl;
     private Boolean shortcut;
     private Boolean shortcutRoot;
     private Boolean reuse;

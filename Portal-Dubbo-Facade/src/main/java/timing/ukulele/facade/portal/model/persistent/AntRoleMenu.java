@@ -6,4 +6,5 @@ import lombok.Data;
 public class AntRoleMenu {
     private Long roleId;
     private Long menuId;
+    private String ability;
 }

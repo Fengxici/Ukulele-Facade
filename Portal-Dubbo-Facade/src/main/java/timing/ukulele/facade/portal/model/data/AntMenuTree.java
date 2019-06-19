@@ -6,6 +6,8 @@ import timing.ukulele.common.data.TreeNode;
 import timing.ukulele.facade.portal.model.persistent.AntIcon;
 import timing.ukulele.facade.portal.model.view.AntIconVO;
 
+import java.util.List;
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class AntMenuTree extends TreeNode {
@@ -26,7 +28,7 @@ public class AntMenuTree extends TreeNode {
     private Boolean disabled;
     private Boolean hide;
     private Boolean hideInBreadcrumb;
-    private String acl;
+    private List<String> acl;
     private Boolean shortcut;
     private Boolean shortcutRoot;
     private Boolean reuse;

@@ -46,7 +46,7 @@ public class UserVO implements Serializable {
     /**
      * 标签
      */
-    private String label;
+    private List<String> label;
 
     /**
      * 部门ID
