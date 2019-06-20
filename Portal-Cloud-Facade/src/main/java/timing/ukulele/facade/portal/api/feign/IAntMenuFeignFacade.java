@@ -5,7 +5,6 @@ import timing.ukulele.common.data.ResponseCode;
 import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.facade.portal.api.IAntMenuFacade;
 import timing.ukulele.facade.portal.model.data.AntMenuTree;
-import timing.ukulele.facade.portal.model.persistent.AntMenu;
 import timing.ukulele.facade.portal.model.view.AntMenuVO;
 
 import java.util.List;
@@ -15,12 +14,12 @@ public interface IAntMenuFeignFacade extends IAntMenuFacade {
     class MenuAntHystrixClientFallback implements IAntMenuFacade {
 
         @Override
-        public ResponseData<AntMenu> get(Long id) {
+        public ResponseData<AntMenuVO> get(Long id) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseData<List<AntMenu>> getByParam(Map<String, Object> params) {
+        public ResponseData<List<AntMenuVO>> getByParam(Map<String, Object> params) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
@@ -30,7 +29,7 @@ public interface IAntMenuFeignFacade extends IAntMenuFacade {
         }
 
         @Override
-        public ResponseData<Boolean> add(AntMenu sysMenuAnt) {
+        public ResponseData<Boolean> add(AntMenuVO sysMenuAnt) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
@@ -40,7 +39,7 @@ public interface IAntMenuFeignFacade extends IAntMenuFacade {
         }
 
         @Override
-        public ResponseData<Boolean> edit(AntMenu sysMenuAnt) {
+        public ResponseData<Boolean> edit(AntMenuVO sysMenuAnt) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
@@ -60,7 +59,7 @@ public interface IAntMenuFeignFacade extends IAntMenuFacade {
         }
 
         @Override
-        public ResponseData<List<AntMenu>> getMenuByUserId(Long userId) {
+        public ResponseData<List<AntMenuVO>> getMenuByUserId(Long userId) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 

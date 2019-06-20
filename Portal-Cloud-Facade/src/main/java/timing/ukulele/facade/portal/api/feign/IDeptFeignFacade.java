@@ -5,7 +5,7 @@ import timing.ukulele.common.data.ResponseCode;
 import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.facade.portal.api.IDeptFacade;
 import timing.ukulele.facade.portal.model.data.DeptTree;
-import timing.ukulele.facade.portal.model.persistent.SysDept;
+import timing.ukulele.facade.portal.model.view.SysDeptVO;
 
 import java.util.List;
 import java.util.Map;
@@ -15,12 +15,12 @@ public interface IDeptFeignFacade extends IDeptFacade {
     class DeptHystrixClientFallback implements IDeptFeignFacade {
 
         @Override
-        public ResponseData<SysDept> get(Long id) {
+        public ResponseData<SysDeptVO> get(Long id) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseData<List<SysDept>> getDeptByParam(Map<String, Object> params) {
+        public ResponseData<List<SysDeptVO>> getDeptByParam(Map<String, Object> params) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
@@ -30,7 +30,7 @@ public interface IDeptFeignFacade extends IDeptFacade {
         }
 
         @Override
-        public ResponseData<Boolean> add(SysDept sysDept) {
+        public ResponseData<Boolean> add(SysDeptVO sysDept) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
@@ -40,7 +40,7 @@ public interface IDeptFeignFacade extends IDeptFacade {
         }
 
         @Override
-        public ResponseData<Boolean> edit(SysDept sysDept) {
+        public ResponseData<Boolean> edit(SysDeptVO sysDept) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
     }

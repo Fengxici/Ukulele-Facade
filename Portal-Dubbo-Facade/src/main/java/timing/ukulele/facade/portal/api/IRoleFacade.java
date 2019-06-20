@@ -2,7 +2,6 @@ package timing.ukulele.facade.portal.api;
 
 import org.springframework.web.bind.annotation.*;
 import timing.ukulele.common.data.ResponseData;
-import timing.ukulele.facade.portal.model.persistent.SysRole;
 import timing.ukulele.facade.portal.model.view.RoleVO;
 
 import java.util.List;
@@ -19,7 +18,7 @@ public interface IRoleFacade {
      * @return 角色信息
      */
     @GetMapping("/{id}")
-    ResponseData<SysRole> role(@PathVariable(value = "id") Long id);
+    ResponseData<RoleVO> role(@PathVariable(value = "id") Long id);
 
     /**
      * 根据参数获取角色列表
@@ -28,7 +27,7 @@ public interface IRoleFacade {
      * @return 角色列表
      */
     @GetMapping("getByParam")
-    ResponseData<List<SysRole>> getRoleByParam(@RequestParam Map<String, Object> params);
+    ResponseData<List<RoleVO>> getRoleByParam(@RequestParam Map<String, Object> params);
 
     /**
      * 添加角色
@@ -68,7 +67,7 @@ public interface IRoleFacade {
      * @return 用户角色集合
      */
     @GetMapping("/user/{userId}")
-    ResponseData<List<SysRole>> getRoleByUserId(@PathVariable(value = "userId") Long userId);
+    ResponseData<List<RoleVO>> getRoleByUserId(@PathVariable(value = "userId") Long userId);
 
     /**
      * 删除用户角色

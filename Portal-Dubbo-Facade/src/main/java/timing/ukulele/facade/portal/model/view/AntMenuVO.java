@@ -1,7 +1,6 @@
 package timing.ukulele.facade.portal.model.view;
 
 import lombok.Data;
-import timing.ukulele.facade.portal.model.persistent.AntIcon;
 
 import java.io.Serializable;
 import java.util.List;
@@ -32,5 +31,5 @@ public class AntMenuVO implements Serializable {
     private Boolean shortcutRoot;
     private Boolean reuse;
     private Boolean open;
-    private AntIcon antIcon;
+    private AntIconVO antIcon;
 }

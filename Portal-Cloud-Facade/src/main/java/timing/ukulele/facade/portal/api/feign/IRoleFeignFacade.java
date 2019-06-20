@@ -4,7 +4,6 @@ import org.springframework.cloud.openfeign.FeignClient;
 import timing.ukulele.common.data.ResponseCode;
 import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.facade.portal.api.IRoleFacade;
-import timing.ukulele.facade.portal.model.persistent.SysRole;
 import timing.ukulele.facade.portal.model.view.RoleVO;
 
 import java.util.List;
@@ -15,12 +14,12 @@ public interface IRoleFeignFacade extends IRoleFacade {
     class RoleHystrixClientFallback implements IRoleFeignFacade {
 
         @Override
-        public ResponseData<SysRole> role(Long id) {
+        public ResponseData<RoleVO> role(Long id) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseData<List<SysRole>> getRoleByParam(Map<String, Object> params) {
+        public ResponseData<List<RoleVO>> getRoleByParam(Map<String, Object> params) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
@@ -40,7 +39,7 @@ public interface IRoleFeignFacade extends IRoleFacade {
         }
 
         @Override
-        public ResponseData<List<SysRole>> getRoleByUserId(Long userId) {
+        public ResponseData<List<RoleVO>> getRoleByUserId(Long userId) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 

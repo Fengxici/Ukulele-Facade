@@ -2,11 +2,10 @@ package timing.ukulele.facade.syslog.api;
 
 import org.springframework.web.bind.annotation.*;
 import timing.ukulele.common.data.ResponseData;
-import timing.ukulele.facade.syslog.model.persistent.SysLog;
+import timing.ukulele.facade.syslog.model.view.LogVO;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
-import java.util.Map;
 
 public interface ILogFacade {
     /**
@@ -15,7 +14,7 @@ public interface ILogFacade {
      * @param log 日志实体
      */
     @PostMapping("/log")
-    ResponseData<Boolean> add(@RequestBody SysLog log);
+    ResponseData<Boolean> add(@RequestBody LogVO log);
 
     /**
      * 根据ID
@@ -28,6 +27,6 @@ public interface ILogFacade {
 
 
     @GetMapping("/log/getByParam")
-    ResponseData<List<SysLog>> getByParam(HttpServletRequest request);
+    ResponseData<List<LogVO>> getByParam(HttpServletRequest request);
 
 }

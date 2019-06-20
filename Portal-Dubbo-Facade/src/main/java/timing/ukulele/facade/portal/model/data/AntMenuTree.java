@@ -3,7 +3,6 @@ package timing.ukulele.facade.portal.model.data;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import timing.ukulele.common.data.TreeNode;
-import timing.ukulele.facade.portal.model.persistent.AntIcon;
 import timing.ukulele.facade.portal.model.view.AntIconVO;
 
 import java.util.List;
@@ -33,5 +32,5 @@ public class AntMenuTree extends TreeNode {
     private Boolean shortcutRoot;
     private Boolean reuse;
     private Boolean open;
-    private AntIcon antIcon;
+    private AntIconVO antIcon;
 }

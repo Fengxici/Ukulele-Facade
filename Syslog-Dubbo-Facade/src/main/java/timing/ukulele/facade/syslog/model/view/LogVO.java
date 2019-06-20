@@ -1,9 +1,9 @@
 package timing.ukulele.facade.syslog.model.view;
 
 import lombok.Data;
-import timing.ukulele.facade.syslog.model.persistent.SysLog;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 日志记录VO
@@ -53,4 +53,6 @@ public class LogVO implements Serializable {
      */
     private String serviceId;
     private String username;
+    private String createBy;
+    private Date createTime;
 }

@@ -4,8 +4,8 @@ import org.springframework.cloud.openfeign.FeignClient;
 import timing.ukulele.common.data.ResponseCode;
 import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.facade.portal.api.IDictFacade;
-import timing.ukulele.facade.portal.model.persistent.SysDict;
-import timing.ukulele.facade.portal.model.persistent.SysDictIndex;
+import timing.ukulele.facade.portal.model.view.DictIndexVO;
+import timing.ukulele.facade.portal.model.view.DictVO;
 
 import java.util.List;
 
@@ -13,17 +13,17 @@ import java.util.List;
 public interface IDictFeignFacade extends IDictFacade {
     class DictHystrixClientFallback implements IDictFeignFacade {
         @Override
-        public ResponseData<SysDict> dict(Long id) {
+        public ResponseData<DictVO> dict(Long id) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseData<Boolean> dict(SysDict sysDict) {
+        public ResponseData<Boolean> dict(DictVO sysDict) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseData<Boolean> editDict(SysDict sysDict) {
+        public ResponseData<Boolean> editDict(DictVO sysDict) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
@@ -33,22 +33,22 @@ public interface IDictFeignFacade extends IDictFacade {
         }
 
         @Override
-        public ResponseData<List<SysDict>> findDictByIndex(String type) {
+        public ResponseData<List<DictVO>> findDictByIndex(String type) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseData<SysDictIndex> dictIndex(Long id) {
+        public ResponseData<DictIndexVO> dictIndex(Long id) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseData<Boolean> dictIndex(SysDictIndex sysDictIndex) {
+        public ResponseData<Boolean> dictIndex(DictIndexVO sysDictIndex) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseData<Boolean> editDictIndex(SysDictIndex sysDict) {
+        public ResponseData<Boolean> editDictIndex(DictIndexVO sysDict) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 

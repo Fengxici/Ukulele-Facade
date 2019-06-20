@@ -1,12 +1,10 @@
 package timing.ukulele.facade.portal.api.feign;
 
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.RequestHeader;
 import timing.ukulele.common.data.ResponseCode;
 import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.facade.portal.api.IMenuFacade;
 import timing.ukulele.facade.portal.model.data.MenuTree;
-import timing.ukulele.facade.portal.model.persistent.SysMenu;
 import timing.ukulele.facade.portal.model.view.MenuVO;
 
 import java.util.List;
@@ -17,12 +15,12 @@ public interface IMenuFeignFacade extends IMenuFacade {
     class MenuHystrixClientFallback implements IMenuFeignFacade {
 
         @Override
-        public ResponseData<SysMenu> menu(Long id) {
+        public ResponseData<MenuVO> menu(Long id) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseData<Boolean> menu(SysMenu sysMenu) {
+        public ResponseData<Boolean> menu(MenuVO sysMenu) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
@@ -32,7 +30,7 @@ public interface IMenuFeignFacade extends IMenuFacade {
         }
 
         @Override
-        public ResponseData<Boolean> menuUpdate(SysMenu sysMenu) {
+        public ResponseData<Boolean> menuUpdate(MenuVO sysMenu) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
@@ -42,7 +40,7 @@ public interface IMenuFeignFacade extends IMenuFacade {
         }
 
         @Override
-        public ResponseData<List<SysMenu>> getByParam(Map<String, Object> params) {
+        public ResponseData<List<MenuVO>> getByParam(Map<String, Object> params) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
@@ -62,7 +60,7 @@ public interface IMenuFeignFacade extends IMenuFacade {
         }
 
         @Override
-        public ResponseData<List<SysMenu>> getMenuByUserId(Long userId) {
+        public ResponseData<List<MenuVO>> getMenuByUserId(Long userId) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 

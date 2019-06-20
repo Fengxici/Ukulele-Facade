@@ -3,7 +3,6 @@ package timing.ukulele.facade.portal.api;
 import org.springframework.web.bind.annotation.*;
 import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.facade.portal.model.data.MenuTree;
-import timing.ukulele.facade.portal.model.persistent.SysMenu;
 import timing.ukulele.facade.portal.model.view.MenuVO;
 
 import java.util.List;
@@ -20,7 +19,7 @@ public interface IMenuFacade {
      * @return 菜单详细信息
      */
     @GetMapping("/{id}")
-    ResponseData<SysMenu> menu(@PathVariable(value = "id") Long id);
+    ResponseData<MenuVO> menu(@PathVariable(value = "id") Long id);
 
     /**
      * 新增菜单
@@ -29,7 +28,7 @@ public interface IMenuFacade {
      * @return success/false
      */
     @PostMapping()
-    ResponseData<Boolean> menu(@RequestBody SysMenu sysMenu);
+    ResponseData<Boolean> menu(@RequestBody MenuVO sysMenu);
 
     /**
      * 删除菜单
@@ -47,7 +46,7 @@ public interface IMenuFacade {
      * @return
      */
     @PutMapping()
-    ResponseData<Boolean> menuUpdate(@RequestBody SysMenu sysMenu);
+    ResponseData<Boolean> menuUpdate(@RequestBody MenuVO sysMenu);
 
     /**
      * 返回树形菜单集合
@@ -64,7 +63,7 @@ public interface IMenuFacade {
      * @return 菜单集合
      */
     @GetMapping(value = "getByParam")
-    ResponseData<List<SysMenu>> getByParam(@RequestParam Map<String, Object> params);
+    ResponseData<List<MenuVO>> getByParam(@RequestParam Map<String, Object> params);
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
 
@@ -107,7 +106,7 @@ public interface IMenuFacade {
      * @return
      */
     @GetMapping("/user/{userId}")
-    ResponseData<List<SysMenu>> getMenuByUserId(@PathVariable(value = "userId") Long userId);
+    ResponseData<List<MenuVO>> getMenuByUserId(@PathVariable(value = "userId") Long userId);
 
     /**
      * 根据角色名获取用户的菜单

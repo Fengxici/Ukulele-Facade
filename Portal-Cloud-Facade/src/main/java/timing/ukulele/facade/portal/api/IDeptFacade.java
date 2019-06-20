@@ -2,9 +2,8 @@ package timing.ukulele.facade.portal.api;
 
 import org.springframework.web.bind.annotation.*;
 import timing.ukulele.common.data.ResponseData;
-import timing.ukulele.common.data.ResponseVO;
 import timing.ukulele.facade.portal.model.data.DeptTree;
-import timing.ukulele.facade.portal.model.persistent.SysDept;
+import timing.ukulele.facade.portal.model.view.SysDeptVO;
 
 import java.util.List;
 import java.util.Map;
@@ -24,7 +23,7 @@ public interface IDeptFacade {
      * @return SysDept
      */
     @GetMapping("/{id}")
-    ResponseData<SysDept> get(@PathVariable(value = "id") Long id);
+    ResponseData<SysDeptVO> get(@PathVariable(value = "id") Long id);
 
     /**
      * 根据参数获取部门列表
@@ -33,7 +32,7 @@ public interface IDeptFacade {
      * @return 部门列表
      */
     @GetMapping("/getByParam")
-    ResponseData<List<SysDept>> getDeptByParam(@RequestParam("params") Map<String, Object> params);
+    ResponseData<List<SysDeptVO>> getDeptByParam(@RequestParam("params") Map<String, Object> params);
 
     /**
      * 返回树形菜单集合
@@ -50,7 +49,7 @@ public interface IDeptFacade {
      * @return success/false
      */
     @PostMapping()
-    ResponseData<Boolean> add(@RequestBody SysDept sysDept);
+    ResponseData<Boolean> add(@RequestBody SysDeptVO sysDept);
     /**
      * 删除
      *
@@ -67,5 +66,5 @@ public interface IDeptFacade {
      * @return success/false
      */
     @PutMapping()
-    ResponseData<Boolean> edit(@RequestBody SysDept sysDept);
+    ResponseData<Boolean> edit(@RequestBody SysDeptVO sysDept);
 }

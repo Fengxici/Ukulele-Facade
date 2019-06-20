@@ -2,8 +2,6 @@ package timing.ukulele.facade.user.api;
 
 import org.springframework.web.bind.annotation.*;
 import timing.ukulele.common.data.ResponseData;
-import timing.ukulele.facade.user.model.data.UserDTO;
-import timing.ukulele.facade.user.model.persistent.SysUser;
 import timing.ukulele.facade.user.model.view.UserVO;
 
 import java.util.List;
@@ -18,7 +16,7 @@ public interface IUserFacade {
      * @return
      */
     @GetMapping("/name/{userName}")
-    ResponseData<SysUser> getUserByUserName(@PathVariable("userName") String userName);
+    ResponseData<UserVO> getUserByUserName(@PathVariable("userName") String userName);
 
     /**
      * 根据电话号码查询用户
@@ -27,7 +25,7 @@ public interface IUserFacade {
      * @return
      */
     @GetMapping("/phone/{phone}")
-    ResponseData<SysUser> getUserByPhone(@PathVariable("phone") String phone);
+    ResponseData<UserVO> getUserByPhone(@PathVariable("phone") String phone);
 
     /**
      * 根据参数获取用户列表
@@ -36,7 +34,7 @@ public interface IUserFacade {
      * @return 用户结合
      */
     @GetMapping("/getByParam")
-    ResponseData<List<SysUser>> getUserByParam(@RequestParam Map<String, Object> params);
+    ResponseData<List<UserVO>> getUserByParam(@RequestParam Map<String, Object> params);
 
 
     /**

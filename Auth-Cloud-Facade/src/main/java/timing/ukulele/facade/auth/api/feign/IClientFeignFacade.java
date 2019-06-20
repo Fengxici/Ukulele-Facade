@@ -5,7 +5,6 @@ import timing.ukulele.common.data.ResponseCode;
 import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.facade.auth.api.IClientFacade;
 import timing.ukulele.facade.auth.model.persistent.OAuthClientDetailsModel;
-
 import java.util.List;
 import java.util.Map;
 

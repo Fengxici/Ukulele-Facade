@@ -1,7 +1,6 @@
 package timing.ukulele.facade.user.model.data;
 
 import lombok.Data;
-import timing.ukulele.facade.user.model.persistent.SysUser;
 
 import java.io.Serializable;
 
@@ -10,7 +9,7 @@ public class UserInfo implements Serializable {
     /**
      * 用户基本信息
      */
-    private SysUser sysUser;
+    private UserDTO sysUser;
     /**
      * 权限标识集合
      */

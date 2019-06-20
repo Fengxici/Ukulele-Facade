@@ -4,8 +4,6 @@ import org.springframework.cloud.openfeign.FeignClient;
 import timing.ukulele.common.data.ResponseCode;
 import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.facade.user.api.IUserFacade;
-import timing.ukulele.facade.user.model.data.UserDTO;
-import timing.ukulele.facade.user.model.persistent.SysUser;
 import timing.ukulele.facade.user.model.view.UserVO;
 
 import java.util.List;
@@ -15,17 +13,17 @@ import java.util.Map;
 public interface IUserFeignFacade extends IUserFacade {
     class UserHystrixClientFallback implements IUserFeignFacade {
         @Override
-        public ResponseData<SysUser> getUserByUserName(String userName) {
+        public ResponseData<UserVO> getUserByUserName(String userName) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseData<SysUser> getUserByPhone(String phone) {
+        public ResponseData<UserVO> getUserByPhone(String phone) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
         @Override
-        public ResponseData<List<SysUser>> getUserByParam(Map<String, Object> params) {
+        public ResponseData<List<UserVO>> getUserByParam(Map<String, Object> params) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
