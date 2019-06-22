@@ -3,7 +3,6 @@ package timing.ukulele.facade.auth.model.persistent;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
-
 @Data
 @TableName("oauth_access_token")
 public class OAuthAccessTokenModel {
