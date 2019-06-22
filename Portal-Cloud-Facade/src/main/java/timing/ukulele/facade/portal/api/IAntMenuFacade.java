@@ -3,6 +3,8 @@ package timing.ukulele.facade.portal.api;
 import org.springframework.web.bind.annotation.*;
 import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.facade.portal.model.data.AntMenuTree;
+import timing.ukulele.facade.portal.model.data.MenuTree;
+import timing.ukulele.facade.portal.model.data.RoleMenuTree;
 import timing.ukulele.facade.portal.model.view.AntMenuVO;
 
 import java.util.List;
@@ -63,6 +65,14 @@ public interface IAntMenuFacade {
     @PutMapping()
     ResponseData<Boolean> edit(@RequestBody AntMenuVO sysMenuAnt);
 
+    /**
+     * 获取所有菜单，标注角色已有的
+     *
+     * @param roleId
+     * @return
+     */
+    @GetMapping("/findAllMenuWithRole/{roleId}")
+    ResponseData<List<RoleMenuTree>> findAllMenuWithRole(@PathVariable(value = "roleId") Long roleId);
 
     /**
      * 通过角色名称查询用户菜单

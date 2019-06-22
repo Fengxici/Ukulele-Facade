@@ -5,10 +5,13 @@ import timing.ukulele.common.data.ResponseCode;
 import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.facade.portal.api.IAntMenuFacade;
 import timing.ukulele.facade.portal.model.data.AntMenuTree;
+import timing.ukulele.facade.portal.model.data.MenuTree;
+import timing.ukulele.facade.portal.model.data.RoleMenuTree;
 import timing.ukulele.facade.portal.model.view.AntMenuVO;
 
 import java.util.List;
 import java.util.Map;
+
 @FeignClient(name = "portal-service", fallback = IAntMenuFeignFacade.MenuAntHystrixClientFallback.class)
 public interface IAntMenuFeignFacade extends IAntMenuFacade {
     class MenuAntHystrixClientFallback implements IAntMenuFacade {
@@ -40,6 +43,11 @@ public interface IAntMenuFeignFacade extends IAntMenuFacade {
 
         @Override
         public ResponseData<Boolean> edit(AntMenuVO sysMenuAnt) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
+        }
+
+        @Override
+        public ResponseData<List<RoleMenuTree>> findAllMenuWithRole(Long roleId) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
