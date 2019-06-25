@@ -3,6 +3,7 @@ package timing.ukulele.facade.portal.api;
 import org.springframework.web.bind.annotation.*;
 import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.facade.portal.model.data.MenuTree;
+import timing.ukulele.facade.portal.model.view.AntRoleMenuEditVO;
 import timing.ukulele.facade.portal.model.view.MenuVO;
 
 import java.util.List;
@@ -97,6 +98,15 @@ public interface IMenuFacade {
      */
     @PostMapping("/role/{roleId}/{menuId}")
     ResponseData<Boolean> addRoleMenu(@PathVariable(value = "roleId") Long roleId, @PathVariable(value = "menuId") Long menuId);
+
+    /**
+     * 批量修改角色菜单
+     *
+     * @param vo 要修改的菜单列表
+     * @return 成功/失败
+     */
+    @PostMapping("/role/menu/edit")
+    ResponseData<Boolean> editRoleMenu(@RequestBody AntRoleMenuEditVO vo);
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
 
     /**

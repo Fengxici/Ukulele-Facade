@@ -1,13 +1,14 @@
 package timing.ukulele.facade.portal.api.feign;
 
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.RequestBody;
 import timing.ukulele.common.data.ResponseCode;
 import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.facade.portal.api.IAntMenuFacade;
 import timing.ukulele.facade.portal.model.data.AntMenuTree;
-import timing.ukulele.facade.portal.model.data.MenuTree;
 import timing.ukulele.facade.portal.model.data.RoleMenuTree;
 import timing.ukulele.facade.portal.model.view.AntMenuVO;
+import timing.ukulele.facade.portal.model.view.AntRoleMenuEditVO;
 
 import java.util.List;
 import java.util.Map;
@@ -63,6 +64,11 @@ public interface IAntMenuFeignFacade extends IAntMenuFacade {
 
         @Override
         public ResponseData<Boolean> addRoleMenu(Long roleId, Long menuId) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
+        }
+
+        @Override
+        public ResponseData<Boolean> editRoleMenu(@RequestBody AntRoleMenuEditVO vo) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
