@@ -10,7 +10,6 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class AntMenuTree extends TreeNode {
-    private Boolean enable;
     private String key;
     private String text;
     private String i18n;
@@ -20,7 +19,6 @@ public class AntMenuTree extends TreeNode {
     private String externalLink;
     private String target;
     private Long iconId;
-    private AntIconVO icon;
     private Integer badge;
     private Boolean badgeDot;
     private String badgeStatus;
@@ -32,5 +30,5 @@ public class AntMenuTree extends TreeNode {
     private Boolean shortcutRoot;
     private Boolean reuse;
     private Boolean open;
-    private AntIconVO antIcon;
+    private AntIconVO icon;
 }

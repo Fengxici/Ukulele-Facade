@@ -9,6 +9,7 @@ import timing.ukulele.facade.portal.model.data.AntMenuTree;
 import timing.ukulele.facade.portal.model.data.RoleMenuTree;
 import timing.ukulele.facade.portal.model.view.AntMenuVO;
 import timing.ukulele.facade.portal.model.view.AntRoleMenuEditVO;
+import timing.ukulele.facade.portal.model.view.RoleMenuEditVO;
 
 import java.util.List;
 import java.util.Map;
@@ -59,11 +60,6 @@ public interface IAntMenuFeignFacade extends IAntMenuFacade {
 
         @Override
         public ResponseData<Boolean> deleteRoleMenu(Long roleId, Long menuId) {
-            return new ResponseData<>(ResponseCode.FACADE_ERROR);
-        }
-
-        @Override
-        public ResponseData<Boolean> addRoleMenu(Long roleId, Long menuId) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 

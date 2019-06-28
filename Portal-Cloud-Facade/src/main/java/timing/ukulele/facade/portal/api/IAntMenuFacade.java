@@ -6,6 +6,7 @@ import timing.ukulele.facade.portal.model.data.AntMenuTree;
 import timing.ukulele.facade.portal.model.data.RoleMenuTree;
 import timing.ukulele.facade.portal.model.view.AntMenuVO;
 import timing.ukulele.facade.portal.model.view.AntRoleMenuEditVO;
+import timing.ukulele.facade.portal.model.view.RoleMenuEditVO;
 
 import java.util.List;
 import java.util.Map;
@@ -92,16 +93,6 @@ public interface IAntMenuFacade {
      */
     @DeleteMapping("/role/{roleId}/{menuId}")
     ResponseData<Boolean> deleteRoleMenu(@PathVariable(value = "roleId") Long roleId, @PathVariable(value = "menuId", required = false) Long menuId);
-
-    /**
-     * 新增角色菜单
-     *
-     * @param roleId 角色Id
-     * @param menuId 菜单ID
-     * @return 成功/失败
-     */
-    @PostMapping("/role/{roleId}/{menuId}")
-    ResponseData<Boolean> addRoleMenu(@PathVariable(value = "roleId") Long roleId, @PathVariable(value = "menuId") Long menuId);
 
     /**
      * 批量修改角色菜单
