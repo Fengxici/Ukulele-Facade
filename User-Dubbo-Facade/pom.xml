@@ -14,13 +14,12 @@
     <url>http://www.example.com</url>
     <dependencies>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>provided</scope>
+            <groupId>timing.ukulele</groupId>
+            <artifactId>user-data</artifactId>
         </dependency>
         <dependency>
             <groupId>timing.ukulele</groupId>
-            <artifactId>ukulele-web</artifactId>
+            <artifactId>ukulele-common</artifactId>
         </dependency>
     </dependencies>
 </project>

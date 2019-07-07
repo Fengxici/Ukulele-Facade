@@ -41,19 +41,23 @@
             </dependency>
             <dependency>
                 <groupId>timing.ukulele</groupId>
-                <artifactId>ukulele-persistence</artifactId>
+                <artifactId>auth-data</artifactId>
                 <version>${timing.ukulele-version}</version>
             </dependency>
             <dependency>
-                <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-annotation</artifactId>
-                <version>${mybatis-plus-annotation-version}</version>
+                <groupId>timing.ukulele</groupId>
+                <artifactId>portal-data</artifactId>
+                <version>${timing.ukulele-version}</version>
             </dependency>
             <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok-version}</version>
-                <scope>provided</scope>
+                <groupId>timing.ukulele</groupId>
+                <artifactId>syslog-data</artifactId>
+                <version>${timing.ukulele-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>timing.ukulele</groupId>
+                <artifactId>user-data</artifactId>
+                <version>${timing.ukulele-version}</version>
             </dependency>
             <dependency>
                 <groupId>timing.ukulele</groupId>

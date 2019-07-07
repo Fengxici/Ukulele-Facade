@@ -16,16 +16,7 @@
     <dependencies>
         <dependency>
             <groupId>timing.ukulele</groupId>
-            <artifactId>ukulele-common</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-annotation</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>provided</scope>
+            <artifactId>auth-data</artifactId>
         </dependency>
         <dependency>
             <groupId>timing.ukulele</groupId>

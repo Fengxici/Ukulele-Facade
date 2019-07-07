@@ -15,9 +15,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>provided</scope>
+            <groupId>timing.ukulele</groupId>
+            <artifactId>user-data</artifactId>
         </dependency>
         <dependency>
             <groupId>timing.ukulele</groupId>

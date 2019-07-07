@@ -10,17 +10,11 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>portal-dubbo-facade</artifactId>
     <name>portal-dubbo-facade</name>
-    <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
     <dependencies>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
             <groupId>timing.ukulele</groupId>
-            <artifactId>ukulele-web</artifactId>
+            <artifactId>portal-data</artifactId>
         </dependency>
     </dependencies>
 </project>
