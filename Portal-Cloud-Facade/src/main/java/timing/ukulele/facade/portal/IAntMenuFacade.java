@@ -9,6 +9,7 @@ import timing.ukulele.data.portal.view.AntRoleMenuEditVO;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 @RequestMapping("/ant-menu")
 public interface IAntMenuFacade {
@@ -119,4 +120,7 @@ public interface IAntMenuFacade {
      */
     @GetMapping("/user")
     ResponseData<List<AntMenuTree>> getUserMenu(String roles);
+
+    @GetMapping("/user/abilities")
+    ResponseData<Set<String>> userAbilities(Long userId, @RequestParam("router") String router);
 }

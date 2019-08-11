@@ -11,6 +11,7 @@ import timing.ukulele.data.portal.view.AntRoleMenuEditVO;
 import timing.ukulele.facade.portal.IAntMenuFacade;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 @FeignClient(name = "portal-service", fallback = IAntMenuFeignFacade.MenuAntHystrixClientFallback.class)
 public interface IAntMenuFeignFacade extends IAntMenuFacade {
@@ -73,6 +74,11 @@ public interface IAntMenuFeignFacade extends IAntMenuFacade {
 
         @Override
         public ResponseData<List<AntMenuTree>> getUserMenu(String roles) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
+        }
+
+        @Override
+        public ResponseData<Set<String>> userAbilities(Long userId, String router) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
     }
