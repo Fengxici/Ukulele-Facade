@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>portal-dubbo-facade</artifactId>
     <name>portal-dubbo-facade</name>
-    <url>http://www.example.com</url>
+    <url>https://fengxici.github.io</url>
     <dependencies>
         <dependency>
             <groupId>timing.ukulele</groupId>
