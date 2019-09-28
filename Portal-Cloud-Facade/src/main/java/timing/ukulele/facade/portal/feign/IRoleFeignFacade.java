@@ -3,6 +3,7 @@ package timing.ukulele.facade.portal.feign;
 import org.springframework.cloud.openfeign.FeignClient;
 import timing.ukulele.common.data.ResponseCode;
 import timing.ukulele.common.data.ResponseData;
+import timing.ukulele.data.portal.data.RolePermission;
 import timing.ukulele.data.portal.view.RoleVO;
 import timing.ukulele.facade.portal.IRoleFacade;
 
@@ -35,6 +36,11 @@ public interface IRoleFeignFacade extends IRoleFacade {
 
         @Override
         public ResponseData<Boolean> roleDel(Long id) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
+        }
+
+        @Override
+        public ResponseData<Map<String, Map<String, RolePermission>>> rolePermission(List<String> roleCode) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 

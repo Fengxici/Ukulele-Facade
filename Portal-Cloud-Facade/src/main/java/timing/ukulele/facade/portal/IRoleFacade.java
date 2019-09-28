@@ -2,6 +2,7 @@ package timing.ukulele.facade.portal;
 
 import org.springframework.web.bind.annotation.*;
 import timing.ukulele.common.data.ResponseData;
+import timing.ukulele.data.portal.data.RolePermission;
 import timing.ukulele.data.portal.view.RoleVO;
 
 import java.util.List;
@@ -57,7 +58,8 @@ public interface IRoleFacade {
     ResponseData<Boolean> roleDel(@PathVariable(value = "id") Long id);
 
     //======================================================================//
-
+    @GetMapping("/permission")
+    ResponseData<Map<String, Map<String, RolePermission>>> rolePermission(@RequestParam(required = false,value = "roleCode") List<String> roleCode);
     //============================User_Role操作==================================//
 
     /**
