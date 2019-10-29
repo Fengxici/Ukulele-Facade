@@ -57,7 +57,7 @@ public interface IDictFacade {
      * @param key 索引键名
      * @return 同类型字典
      */
-    @GetMapping("/index/{key}")
+    @GetMapping("/index/key/{key}")
     ResponseData<List<DictVO>> findDictByIndex(@PathVariable(value = "key") String key);
 
     /**
