@@ -1,5 +1,5 @@
 echo off
 echo install work is running.....
-title web
+title facade
 cmd /k mvn clean install
 echo install work is done
