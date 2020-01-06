@@ -28,6 +28,13 @@ public interface IUserFacade {
     ResponseData<UserVO> getUserByPhone(@PathVariable("phone") String phone);
 
     /**
+     * 根据用户名或手机号等唯一可确定身份的参数查找用户
+     * @param param 用户名 或手机号等唯一可确定身份的参数
+     * @return
+     */
+    @GetMapping("/param/{param}")
+    ResponseData<UserVO> getUserByPhoneOrName(@PathVariable("param") String param);
+    /**
      * 根据参数获取用户列表
      *
      * @param params 参数集合

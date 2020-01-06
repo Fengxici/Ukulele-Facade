@@ -23,6 +23,11 @@ public interface IUserFeignFacade extends IUserFacade {
         }
 
         @Override
+        public ResponseData<UserVO> getUserByPhoneOrName(String param) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
+        }
+
+        @Override
         public ResponseData<List<UserVO>> getUserByParam(Map<String, Object> params) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
