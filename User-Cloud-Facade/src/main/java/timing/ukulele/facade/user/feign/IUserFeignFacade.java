@@ -18,6 +18,11 @@ public interface IUserFeignFacade extends IUserFacade {
         }
 
         @Override
+        public ResponseData<UserVO> getUserById(Long id) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
+        }
+
+        @Override
         public ResponseData<UserVO> getUserByPhone(String phone) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }

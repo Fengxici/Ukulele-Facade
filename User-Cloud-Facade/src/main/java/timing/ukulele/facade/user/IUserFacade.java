@@ -19,6 +19,15 @@ public interface IUserFacade {
     ResponseData<UserVO> getUserByUserName(@PathVariable("userName") String userName);
 
     /**
+     * 根据用户id获取用户
+     *
+     * @param id 用户id
+     * @return
+     */
+    @GetMapping("/name/{id}")
+    ResponseData<UserVO> getUserById(@PathVariable("id") Long id);
+
+    /**
      * 根据电话号码查询用户
      *
      * @param phone 手机号
@@ -29,11 +38,13 @@ public interface IUserFacade {
 
     /**
      * 根据用户名或手机号等唯一可确定身份的参数查找用户
+     *
      * @param param 用户名 或手机号等唯一可确定身份的参数
      * @return
      */
     @GetMapping("/param/{param}")
     ResponseData<UserVO> getUserByPhoneOrName(@PathVariable("param") String param);
+
     /**
      * 根据参数获取用户列表
      *

@@ -11,7 +11,12 @@ public interface IThirdPartyUserFeignFacade extends IThirdPartyUserFacade {
     class UserHystrixClientFallback implements IThirdPartyUserFeignFacade {
 
         @Override
-        public ResponseData<ThirdPartyUserVO> getUserByUserName(String platId, Long userId, Integer plat) {
+        public ResponseData<ThirdPartyUserVO> getThirdUserByAll(String platId, Long userId, Integer plat) {
+            return new ResponseData<>(ResponseCode.FACADE_ERROR);
+        }
+
+        @Override
+        public ResponseData<ThirdPartyUserVO> getUserByThirdInfo(String platId, Integer plat) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
     }
