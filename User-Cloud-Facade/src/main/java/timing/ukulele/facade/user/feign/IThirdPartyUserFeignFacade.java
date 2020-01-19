@@ -6,14 +6,14 @@ import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.data.user.view.ThirdPartyUserVO;
 import timing.ukulele.facade.user.IThirdPartyUserFacade;
 
-@FeignClient(name = "user-service", fallback = IThirdPartyUserFeignFacade.UserHystrixClientFallback.class)
+@FeignClient(name = "user-service", fallback = IThirdPartyUserFeignFacade.ThirdPartyUserHystrixClientFallback.class)
 public interface IThirdPartyUserFeignFacade extends IThirdPartyUserFacade {
-    class UserHystrixClientFallback implements IThirdPartyUserFeignFacade {
+    class ThirdPartyUserHystrixClientFallback implements IThirdPartyUserFeignFacade {
 
-        @Override
-        public ResponseData<ThirdPartyUserVO> getThirdUserByAll(String platId, Long userId, Integer plat) {
-            return new ResponseData<>(ResponseCode.FACADE_ERROR);
-        }
+//        @Override
+//        public ResponseData<ThirdPartyUserVO> getThirdUserByAll(String platId, Long userId, Integer plat) {
+//            return new ResponseData<>(ResponseCode.FACADE_ERROR);
+//        }
 
         @Override
         public ResponseData<ThirdPartyUserVO> getUserByThirdInfo(String platId, Integer plat) {
