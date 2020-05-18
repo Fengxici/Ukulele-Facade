@@ -6,6 +6,9 @@ import timing.ukulele.data.auth.persistent.OAuthClientDetailsModel;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author fengxici
+ */
 public interface IClientFacade {
 
     /**
