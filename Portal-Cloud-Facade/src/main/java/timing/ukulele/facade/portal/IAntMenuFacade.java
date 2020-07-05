@@ -116,10 +116,11 @@ public interface IAntMenuFacade {
      * 根据角色名获取用户的菜单
      *
      * @param roles 角色名
+     * @param username 用户名
      * @return
      */
     @GetMapping("/user")
-    ResponseData<List<AntMenuTree>> getUserMenu(String roles);
+    ResponseData<List<AntMenuTree>> getUserMenu(String roles,String username);
 
     @GetMapping("/user/abilities")
     ResponseData<Set<String>> userAbilities(Long userId, @RequestParam("router") String router);
