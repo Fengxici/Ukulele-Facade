@@ -73,7 +73,7 @@ public interface IAntMenuFeignFacade extends IAntMenuFacade {
         }
 
         @Override
-        public ResponseData<List<AntMenuTree>> getUserMenu(String roles) {
+        public ResponseData<List<AntMenuTree>> getUserMenu(String roles, String username) {
             return new ResponseData<>(ResponseCode.FACADE_ERROR);
         }
 
