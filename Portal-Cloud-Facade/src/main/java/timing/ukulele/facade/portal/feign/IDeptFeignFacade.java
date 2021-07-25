@@ -10,7 +10,7 @@ import timing.ukulele.facade.portal.IDeptFacade;
 import java.util.List;
 import java.util.Map;
 
-@FeignClient(name = "portal-service", fallback = IDeptFeignFacade.DeptHystrixClientFallback.class)
+@FeignClient(contextId = "deptFeignFacade", name = "portal-service", fallback = IDeptFeignFacade.DeptHystrixClientFallback.class)
 public interface IDeptFeignFacade extends IDeptFacade {
     class DeptHystrixClientFallback implements IDeptFeignFacade {
 

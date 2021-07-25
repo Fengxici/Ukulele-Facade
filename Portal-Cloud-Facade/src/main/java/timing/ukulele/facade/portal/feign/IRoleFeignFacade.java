@@ -10,7 +10,7 @@ import timing.ukulele.facade.portal.IRoleFacade;
 import java.util.List;
 import java.util.Map;
 
-@FeignClient(name = "portal-service", fallback = IRoleFeignFacade.RoleHystrixClientFallback.class)
+@FeignClient(contextId = "roleFeignClient", name = "portal-service", fallback = IRoleFeignFacade.RoleHystrixClientFallback.class)
 public interface IRoleFeignFacade extends IRoleFacade {
     class RoleHystrixClientFallback implements IRoleFeignFacade {
 

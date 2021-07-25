@@ -9,7 +9,7 @@ import timing.ukulele.facade.portal.IDictFacade;
 
 import java.util.List;
 
-@FeignClient(name = "portal-service", fallback = IDictFeignFacade.DictHystrixClientFallback.class)
+@FeignClient(contextId = "dictFeignClient", name = "portal-service", fallback = IDictFeignFacade.DictHystrixClientFallback.class)
 public interface IDictFeignFacade extends IDictFacade {
     class DictHystrixClientFallback implements IDictFeignFacade {
         @Override

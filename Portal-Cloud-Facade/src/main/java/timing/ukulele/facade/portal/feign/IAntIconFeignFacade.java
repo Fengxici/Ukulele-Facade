@@ -9,7 +9,7 @@ import timing.ukulele.facade.portal.IAntIconFacade;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-@FeignClient(name = "portal-service", fallback = IAntIconFeignFacade.AntIconHystrixClientFallback.class)
+@FeignClient(contextId = "antIconFeignClient", name = "portal-service", fallback = IAntIconFeignFacade.AntIconHystrixClientFallback.class)
 public interface IAntIconFeignFacade extends IAntIconFacade {
     class AntIconHystrixClientFallback implements IAntIconFeignFacade {
 

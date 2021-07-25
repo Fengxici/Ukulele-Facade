@@ -9,11 +9,12 @@ import timing.ukulele.data.portal.data.RoleMenuTree;
 import timing.ukulele.data.portal.view.AntMenuVO;
 import timing.ukulele.data.portal.view.AntRoleMenuEditVO;
 import timing.ukulele.facade.portal.IAntMenuFacade;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-@FeignClient(name = "portal-service", fallback = IAntMenuFeignFacade.MenuAntHystrixClientFallback.class)
+@FeignClient(contextId = "antMenuFeignFacade", name = "portal-service", fallback = IAntMenuFeignFacade.MenuAntHystrixClientFallback.class)
 public interface IAntMenuFeignFacade extends IAntMenuFacade {
     class MenuAntHystrixClientFallback implements IAntMenuFacade {
 

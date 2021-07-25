@@ -9,7 +9,7 @@ import timing.ukulele.facade.user.IUserFacade;
 import java.util.List;
 import java.util.Map;
 
-@FeignClient(name = "user-service", fallback = IUserFeignFacade.UserHystrixClientFallback.class)
+@FeignClient(contextId = "userFeignClient", name = "user-service", fallback = IUserFeignFacade.UserHystrixClientFallback.class)
 public interface IUserFeignFacade extends IUserFacade {
     class UserHystrixClientFallback implements IUserFeignFacade {
         @Override

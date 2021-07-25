@@ -12,7 +12,7 @@ import timing.ukulele.facade.portal.IMenuFacade;
 import java.util.List;
 import java.util.Map;
 
-@FeignClient(name = "portal-service", fallback = IMenuFeignFacade.MenuHystrixClientFallback.class)
+@FeignClient(contextId = "menuFeignClient", name = "portal-service", fallback = IMenuFeignFacade.MenuHystrixClientFallback.class)
 public interface IMenuFeignFacade extends IMenuFacade {
     class MenuHystrixClientFallback implements IMenuFeignFacade {
 

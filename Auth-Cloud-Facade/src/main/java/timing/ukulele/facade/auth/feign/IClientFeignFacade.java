@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * @author fengxici
  */
-@FeignClient(name = "auth-service", fallback = IClientFeignFacade.HystrixClientFallback.class)
+@FeignClient(contextId = "authFeignClient", name = "auth-service", fallback = IClientFeignFacade.HystrixClientFallback.class)
 public interface IClientFeignFacade extends IClientFacade {
     class HystrixClientFallback implements IClientFeignFacade {
 

@@ -6,7 +6,7 @@ import timing.ukulele.common.data.ResponseData;
 import timing.ukulele.data.user.view.ThirdPartyUserVO;
 import timing.ukulele.facade.user.IThirdPartyUserFacade;
 
-@FeignClient(name = "user-service", fallback = IThirdPartyUserFeignFacade.ThirdPartyUserHystrixClientFallback.class)
+@FeignClient(contextId = "thirdPartyUserFeignClient", name = "user-service", fallback = IThirdPartyUserFeignFacade.ThirdPartyUserHystrixClientFallback.class)
 public interface IThirdPartyUserFeignFacade extends IThirdPartyUserFacade {
     class ThirdPartyUserHystrixClientFallback implements IThirdPartyUserFeignFacade {
 
