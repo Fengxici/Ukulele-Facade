@@ -25,7 +25,7 @@
         <timing.ukulele-version>1.0-SNAPSHOT</timing.ukulele-version>
         <mybatis-plus-annotation-version>3.4.3.1</mybatis-plus-annotation-version>
         <lombok-version>1.18.20</lombok-version>
-        <spring-cloud-openfeign-core-version>3.0.3</spring-cloud-openfeign-core-version>
+        <spring-cloud-openfeign-core-version>2.2.9.RELEASE</spring-cloud-openfeign-core-version>
     </properties>
     <dependencyManagement>
         <dependencies>
